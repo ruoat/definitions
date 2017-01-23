@@ -19,7 +19,7 @@ node nodeas1 [
 Application server 
 2+n
 ----
-CentOS, Ubuntu or Debian
+CentOS 7, Ubuntu 16 or Debian 8
 ....
 32G+ RAM
 4+ CPU
@@ -30,7 +30,7 @@ database database1 [
 Database Server 
 2+n
 ----
-CentOS, Ubuntu or Debian
+CentOS 7, Ubuntu 16 or Debian 8
 ....
 32G+ RAM
 4+ CPU
@@ -41,7 +41,7 @@ database logging1 [
 Logging Server 
 2+n
 ----
-CentOS, Ubuntu or Debian
+CentOS 7, Ubuntu 16 or Debian 8
 ....
 16G+ RAM
 4+ CPU
@@ -51,7 +51,7 @@ SAN 1T+ Storage
 node nodeintegration1 [
 Integration Security Server
 ----
-Ubuntu
+CentOS 7 or Ubuntu 14
 1+n
 ....
 16G+ RAM
@@ -63,7 +63,7 @@ node nodeintegration2 [
 Integration Server
 2+n
 ----
-CentOS, Ubuntu or Debian
+CentOS 7, Ubuntu 16 or Debian 8
 ....
 16G+ RAM
 4+ CPU
@@ -74,7 +74,7 @@ node nodeproxy [
 Proxy Server
 2+n
 ----
-CentOS, Ubuntu or Debian
+CentOS 7, Ubuntu 16 or Debian 8
 ....
 16G+ RAM
 4+ CPU
@@ -84,7 +84,7 @@ CentOS, Ubuntu or Debian
 node nodeci [
 Continuous Integration Server
 ----
-CentOS, Ubuntu or Debian
+CentOS 7, Ubuntu 16 or Debian 8
 ....
 32G+ RAM
 4+ CPU
@@ -95,7 +95,7 @@ node nodevm [
 Temporary Server 
 0+n
 ----
-CentOS, Ubuntu or Debian
+CentOS 7, Ubuntu 16 or Debian 8
 ....
 8G+ RAM
 2+ CPU
