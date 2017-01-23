@@ -85,7 +85,7 @@ Continuous Integration Server
 ----
 CentOS, Ubuntu or Debian
 ....
-16G+ RAM
+32G+ RAM
 4+ CPU
 1T+ storage
 2 NIC
