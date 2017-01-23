@@ -7,7 +7,7 @@
 - SAN kasvattaminen ainakin 100T asti.
 - NAS low tier 
 - NAS high tier
-- Palomuuri ja Loadbalancer
+- Palomuuri, VLAN ja Loadbalancer
 
 ###Asiantuntijapalvelut
 - Sysadmin palvelut 24/7
