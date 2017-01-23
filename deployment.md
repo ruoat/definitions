@@ -103,7 +103,8 @@ CentOS 7, Ubuntu 16 or Debian 8
 1 virtual NIC
 ]
 database NAS
-database SAN
+database SAN1
+database SAN2
 database Backup
 
 internet1 -- firewall
@@ -128,10 +129,10 @@ loadbalancer1 -- VLAN1
 loadbalancer1 -- VLAN1
 database1 -- VLAN1
 database1 -- VLAN1
-database1 -- SAN
-logging1 -- SAN
-database1 -- SAN
-logging1 -- SAN
+database1 -- SAN1
+logging1 -- SAN1
+database1 -- SAN2
+logging1 -- SAN2
 nodeintegration2 -- VLAN1
 nodeintegration2 -- VLAN1
 logging1 -- VLAN1
