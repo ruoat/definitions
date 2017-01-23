@@ -7,7 +7,6 @@
 ###Peruskokoonpanot
 ####Application server 
 2+n kappaletta
-----
 CentOS, Ubuntu or Debian
 ....
 32G+ RAM
@@ -17,7 +16,6 @@ CentOS, Ubuntu or Debian
 
 ####Database Server 
 2+n kappaletta
-----
 CentOS, Ubuntu or Debian
 ....
 32G+ RAM
@@ -26,9 +24,8 @@ SAN 1T+ Storage
 2 NIC
 
 ####Integration Security Server
-----
 Ubuntu
-1+n
+1+n kappaletta
 ....
 16G+ RAM
 4+ CPU
@@ -36,8 +33,7 @@ Ubuntu
 2 NIC
 
 ####Integration Server
-2+n
-----
+2+n kappaletta
 CentOS, Ubuntu or Debian
 ....
 16G+ RAM
@@ -46,8 +42,7 @@ CentOS, Ubuntu or Debian
 2 NIC
 
 ####Proxy Server
-2+n
-----
+2+n kappaletta
 CentOS, Ubuntu or Debian
 ....
 16G+ RAM
@@ -56,29 +51,17 @@ CentOS, Ubuntu or Debian
 4 NIC
 
 ####Continuous Integration Server
-----
+ Yksi kappale
 CentOS, Ubuntu or Debian
 ....
 32G+ RAM
 4+ CPU
 1T+ storage
 2 NIC
-]
-node nodevm [
-Temporary Server 
-0+n
-----
-CentOS, Ubuntu or Debian
-....
-8G+ RAM
-2+ CPU
-100G+ storage
-1 virtual NIC
 
 ###Optiona 
 ####Logging Server 
 2+n
-----
 CentOS, Ubuntu or Debian
 ....
 16G+ RAM
@@ -86,12 +69,20 @@ CentOS, Ubuntu or Debian
 SAN 1T+ Storage
 2 NIC
 
+####Temporary Server 
+0+n
+CentOS, Ubuntu or Debian
+....
+8G+ RAM
+2+ CPU
+100G+ storage
+1 virtual NIC
+
 ###Kapasiteettipalveluja
 - SAN kasvattaminen ainakin 100T asti.
 - NAS low tier 
 - Backup
 - Virtuaalipalvelin
-
 
 ###Verkkopalveluja
 - Palomuuri, VLAN ja Loadbalancer
