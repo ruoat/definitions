@@ -84,6 +84,7 @@ CentOS, Ubuntu or Debian
 50-100G storage
 ]
 database NAS
+database Backup
 
 internet -- firewall
 firewall -- DMZ 
@@ -100,5 +101,7 @@ database1 -- VLAN1
 nodeintegration2 -- VLAN1
 logging1 -- VLAN1
 nodeas1 -- VLAN1
+Backup .. VLAN1
+Backup .. DMZ
 NAS .. VLAN1
 @enduml
