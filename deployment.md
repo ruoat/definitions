@@ -3,7 +3,8 @@ header
 Deployment diagram generated with plantuml.com to github.com/omahoito. CC-BY-4.0 City of Espoo 2017. To change the picture, make a pull request with changes to deployment.md and README.md.
 endheader
 
-cloud internet
+cloud internet1
+cloud internet2
 cloud firewall [ 
 Firewall 1 and 2
 ]
@@ -104,7 +105,8 @@ CentOS, Ubuntu or Debian
 database NAS
 database Backup
 
-internet -- firewall
+internet1 -- firewall
+internet2 -- firewall
 firewall -- DMZ 
 DMZ -- loadbalancer1 
 
