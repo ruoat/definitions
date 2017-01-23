@@ -121,11 +121,14 @@ nodeintegration1 ~~ logging1
 nodeproxy ~~ logging1
 
 loadbalancer1 -- VLAN1
+loadbalancer1 -- VLAN1
+database1 -- VLAN1
 database1 -- VLAN1
 database1 -- SAN
 logging1 -- SAN
 nodeintegration2 -- VLAN1
 logging1 -- VLAN1
+nodeas1 -- VLAN1
 nodeas1 -- VLAN1
 Backup .. VLAN1
 Backup .. DMZ
