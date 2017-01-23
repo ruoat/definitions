@@ -23,6 +23,7 @@ CentOS, Ubuntu or Debian
 8-32G RAM
 4-16 CPU
 50-100G storage
+2 NIC
 ]
 database database1 [
 Database Server 
@@ -33,6 +34,7 @@ CentOS, Ubuntu or Debian
 8-16G RAM
 4-8 CPU
 SAN 1T+ Storage
+2 NIC
 ]
 database logging1 [
 Logging Server 
@@ -43,6 +45,7 @@ CentOS, Ubuntu or Debian
 8-16G RAM
 4-8 CPU
 SAN 1T+ Storage
+2 NIC
 ]
 node nodeintegration1 [
 Integration Security Server
@@ -53,6 +56,7 @@ Ubuntu
 8-16G RAM
 4-8 CPU
 50-100G storage
+2 NIC
 ]
 node nodeintegration2 [
 Integration server
@@ -63,6 +67,7 @@ CentOS, Ubuntu or Debian
 8-16G RAM
 4-8 CPU
 50-100G storage
+2 NIC
 ]
 node nodeproxy [
 Proxy Server
@@ -73,6 +78,7 @@ CentOS, Ubuntu or Debian
 8-16G RAM
 4-8 CPU
 50-100G storage
+4 NIC
 ]
 node nodeci [
 Continuous Integration Server
@@ -82,6 +88,7 @@ CentOS, Ubuntu or Debian
 8-32G RAM
 4-16 CPU
 50-100G storage
+2 NIC
 ]
 database NAS
 database Backup
