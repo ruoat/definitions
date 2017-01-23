@@ -7,7 +7,7 @@ cloud internet
 cloud firewall [ 
 Firewall 1 and 2
 ]
-cloud dmz
+interface DMZ
 cloud loadbalancer1 [ 
 Loadbalancer 1 and 2
 ]
@@ -86,12 +86,12 @@ CentOS, Ubuntu or Debian
 database NAS
 
 internet -- firewall
-firewall -- dmz 
-dmz -- loadbalancer1 
+firewall -- DMZ 
+DMZ -- loadbalancer1 
 
-dmz -- nodeci
-dmz -- nodeproxy
-dmz -- nodeintegration1
+DMZ -- nodeci
+DMZ -- nodeproxy
+DMZ -- nodeintegration1
 nodeintegration1 ~~ logging1
 nodeproxy ~~ logging1
 
