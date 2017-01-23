@@ -121,5 +121,7 @@ logging1 -- VLAN1
 nodeas1 -- VLAN1
 Backup .. VLAN1
 Backup .. DMZ
+nodevm .. VLAN1
+nodevm .. DMZ
 NAS .. VLAN1
 @enduml
