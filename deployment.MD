@@ -1,6 +1,6 @@
 @startuml
 header
-Deployment diagram generated with plantuml.com to github.com/omahoito. CC-BY-4.0 City of Espoo 2017.
+Deployment diagram generated with plantuml.com to github.com/omahoito. CC-BY-4.0 City of Espoo 2017. To change the picture, make a pull request with changes to deployment.md and README.md.
 endheader
 
 cloud internet
