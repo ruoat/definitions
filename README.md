@@ -2,7 +2,7 @@
 
 ##Deployment architecture
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.MD?13)
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.MD?13) <!--- This generates a picture based on deployment.MD. To change the counter in the url above, i.e. deployment.MD?13 -> deployment.MD?14 --->
 ###Optiona 
 - SAN kasvattaminen ainakin 100T asti.
 - NAS low tier 
