@@ -29,7 +29,20 @@
 - 250G+ SSD storage
 - 4 NIC
 
+###Kapasiteettipalveluja
+- Backup
+
+###Asiantuntijapalvelut
+- Sysadmin palvelut 24/7
+- Ylläpitoasiantuntija t&m
+- Konesaliasiantuntija/arkkitehti t&m
+
 ###Optiona 
+###Kapasiteettipalveluja optiona
+- SAN kasvattaminen ainakin 100T asti.
+- NAS low tier 
+- Virtuaalipalvelin
+
 ####Database Server 
 - 2+n kappaletta
 - CentOS 7, Ubuntu 16 or Debian 8
@@ -60,16 +73,6 @@
 - 100G+ storage
 - 1 virtual NIC
 
-###Kapasiteettipalveluja
-- SAN kasvattaminen ainakin 100T asti.
-- NAS low tier 
-- Backup
-- Virtuaalipalvelin
-
-###Verkkopalveluja
+####Verkkopalveluja
 - Palomuuri, VLAN ja Loadbalancer
 
-###Asiantuntijapalvelut
-- Sysadmin palvelut 24/7
-- Ylläpitoasiantuntija t&m
-- Konesaliasiantuntija/arkkitehti t&m
