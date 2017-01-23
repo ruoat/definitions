@@ -7,7 +7,7 @@
 ###Peruskokoonpanot
 ####Peruskokoonpano 
 - 3+n kappaletta
-- CentOS, Ubuntu or Debian
+- CentOS 7, Ubuntu 16 or Debian 8
 - 32G+ RAM
 - 4+ CPU
 - 250G+ SSD storage
@@ -15,7 +15,7 @@
 
 ####Integraatiopalvelin
 - 2+n kappaletta
-- CentOS, Ubuntu or Debian
+- CentOS 7, Ubuntu 16 or Debian 8
 - 16G+ RAM
 - 4+ CPU
 - 250G+ SSD storage
@@ -23,7 +23,7 @@
 
 ####Proxypalvelin
 - 2+n kappaletta
-- CentOS, Ubuntu or Debian
+- CentOS 7, Ubuntu 16 or Debian 8
 - 16G+ RAM
 - 4+ CPU
 - 250G+ SSD storage
@@ -32,7 +32,7 @@
 ###Optiona 
 ####Database Server 
 - 2+n kappaletta
-- CentOS, Ubuntu or Debian
+- CentOS 7, Ubuntu 16 or Debian 8
 - 32G+ RAM
 - 4+ CPU
 - SAN 1T+ Storage
@@ -40,21 +40,21 @@
 
 ####Logging Server 
 - 2+n
-- CentOS, Ubuntu or Debian
+- CentOS 7, Ubuntu 16 or Debian 8
 - 16G+ RAM
 - 4+ CPU
 - SAN 1T+ Storage
 - 2 NIC
 
 ####Integration Security Server
-- Ubuntu
+- CentOS 7 or Ubuntu 14
 - 16G+ RAM
 - 4+ CPU
 - 250G+ SSD storage
 - 2 NIC
 
 ####Temporary Server 
-- CentOS, Ubuntu or Debian
+- CentOS 7, Ubuntu 16 or Debian 8
 - 8G+ RAM
 - 2+ CPU
 - 100G+ storage
