@@ -1,16 +1,16 @@
 # definitions
-ODA definitions
+#ODA definitions
 
-Deployment architecture
+##Deployment architecture
 
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.MD?5)
-##Optiona 
+###Optiona 
 - SAN kasvattaminen ainakin 100T asti.
 - NAS low tier 
 - NAS high tier
 - Palomuuri ja Loadbalancer
 
-##Asiantuntijapalvelut
+###Asiantuntijapalvelut
 - Sysadmin palvelut 24/7
 - Ylläpitoasiantuntija t&m
 - Konesaliasiantuntija/arkkitehti t&m
