@@ -112,7 +112,10 @@ firewall -- DMZ
 DMZ -- loadbalancer1 
 
 DMZ -- nodeci
-DMZ -- nodeproxy
+firewall -- nodeproxy
+loadbalancer1 -- nodeproxy
+firewall -- nodeproxy
+loadbalancer1 -- nodeproxy
 DMZ -- nodeintegration1
 nodeintegration1 ~~ logging1
 nodeproxy ~~ logging1
