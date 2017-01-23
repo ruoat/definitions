@@ -6,7 +6,6 @@
 ###Optiona 
 - SAN kasvattaminen ainakin 100T asti.
 - NAS low tier 
-- NAS high tier
 - Palomuuri, VLAN ja Loadbalancer
 
 ###Asiantuntijapalvelut
