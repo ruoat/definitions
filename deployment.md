@@ -130,6 +130,8 @@ database1 -- VLAN1
 database1 -- VLAN1
 database1 -- SAN
 logging1 -- SAN
+database1 -- SAN
+logging1 -- SAN
 nodeintegration2 -- VLAN1
 nodeintegration2 -- VLAN1
 logging1 -- VLAN1
