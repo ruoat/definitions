@@ -123,7 +123,7 @@ loadbalancer1 -- nodeproxy
 DMZ -- nodeintegration1
 nodeintegration1 ~~ logging1
 nodeproxy ~~ logging1
-
+nodeci ~~ logging1
 loadbalancer1 -- VLAN1
 loadbalancer1 -- VLAN1
 database1 -- VLAN1
