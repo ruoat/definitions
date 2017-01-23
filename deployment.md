@@ -130,18 +130,24 @@ loadbalancer1 -- VLAN1
 database1 -- VLAN1
 database1 -- VLAN1
 database1 -- SAN1
+nodeci ~~ database1
 logging1 -- SAN1
 database1 -- SAN2
 logging1 -- SAN2
 nodeintegration2 -- VLAN1
 nodeintegration2 -- VLAN1
+nodeci ~~ nodeintegration2
 logging1 -- VLAN1
 logging1 -- VLAN1
+nodeci ~~ logging1
 nodeas1 -- VLAN1
 nodeas1 -- VLAN1
+nodeci ~~ nodeas1
 Backup .. VLAN1
 Backup .. DMZ
+nodeci ~~ Backup
 nodevm .. VLAN1
 nodevm .. DMZ
+nodeci ~~ nodevm
 NAS .. VLAN1
 @enduml
