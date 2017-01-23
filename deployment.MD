@@ -102,6 +102,12 @@ nodeas2 -- database1
 dmz -- nodeintegration1
 loadbalancer -- nodeintegration2
 nodeas2 -- nodeintegration2
+nodeintegration1 ~~ logging1
+nodeproxy ~~ logging1
+nodeas1 -- logging1
+loadbalancer -- logging1
+database1 -- logging1
+nodeintegration2 -- logging1
 nodeas2 -- logging1
 NAS .. nodeas1
 NAS .. nodeas2
