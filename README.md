@@ -8,6 +8,7 @@
 - NAS low tier 
 - Backup
 - Palomuuri, VLAN ja Loadbalancer
+- Virtuaalipalvelin
 
 ###Asiantuntijapalvelut
 - Sysadmin palvelut 24/7
