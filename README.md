@@ -5,78 +5,60 @@
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.md?15) <!--- This generates a picture based on deployment.MD. To change the counter in the url above, i.e. deployment.MD?13 -> deployment.MD?14 --->
 
 ###Peruskokoonpanot
-####Application server 
-2+n kappaletta
-CentOS, Ubuntu or Debian
-....
-32G+ RAM
-4+ CPU
-1T+ storage
-2 NIC
+####Peruskokoonpano 
+- 3+n kappaletta
+- CentOS, Ubuntu or Debian
+- 32G+ RAM
+- 4+ CPU
+- 1T+ storage
+- 2 NIC
 
-####Database Server 
-2+n kappaletta
-CentOS, Ubuntu or Debian
-....
-32G+ RAM
-4+ CPU
-SAN 1T+ Storage
-2 NIC
+####Integraatiopalvelin
+- 2+n kappaletta
+- CentOS, Ubuntu or Debian
+- 16G+ RAM
+- 4+ CPU
+- 1T+ storage
+- 2 NIC
 
-####Integration Security Server
-Ubuntu
-1+n kappaletta
-....
-16G+ RAM
-4+ CPU
-1T+ storage
-2 NIC
-
-####Integration Server
-2+n kappaletta
-CentOS, Ubuntu or Debian
-....
-16G+ RAM
-4+ CPU
-1T+ storage
-2 NIC
-
-####Proxy Server
-2+n kappaletta
-CentOS, Ubuntu or Debian
-....
-16G+ RAM
-4+ CPU
-1T+ storage
-4 NIC
-
-####Continuous Integration Server
- Yksi kappale
-CentOS, Ubuntu or Debian
-....
-32G+ RAM
-4+ CPU
-1T+ storage
-2 NIC
+####Proxypalvelin
+- 2+n kappaletta
+- CentOS, Ubuntu or Debian
+- 16G+ RAM
+- 4+ CPU
+- 1T+ storage
+- 4 NIC
 
 ###Optiona 
+####Database Server 
+- 2+n kappaletta
+- CentOS, Ubuntu or Debian
+- 32G+ RAM
+- 4+ CPU
+- SAN 1T+ Storage
+- 2 NIC
+
 ####Logging Server 
-2+n
-CentOS, Ubuntu or Debian
-....
-16G+ RAM
-4+ CPU
-SAN 1T+ Storage
-2 NIC
+- 2+n
+- CentOS, Ubuntu or Debian
+- 16G+ RAM
+- 4+ CPU
+- SAN 1T+ Storage
+- 2 NIC
+
+####Integration Security Server
+- Ubuntu
+- 16G+ RAM
+- 4+ CPU
+- 1T+ storage
+- 2 NIC
 
 ####Temporary Server 
-0+n
-CentOS, Ubuntu or Debian
-....
-8G+ RAM
-2+ CPU
-100G+ storage
-1 virtual NIC
+- CentOS, Ubuntu or Debian
+- 8G+ RAM
+- 2+ CPU
+- 100G+ storage
+- 1 virtual NIC
 
 ###Kapasiteettipalveluja
 - SAN kasvattaminen ainakin 100T asti.
