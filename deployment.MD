@@ -13,8 +13,8 @@ Application server
 ----
 CentOS, Ubuntu or Debian
 ....
-8-16G RAM
-4-8 CPU
+8-32G RAM
+4-16 CPU
 50-100G storage
 ]
 node nodeas2 [
@@ -23,8 +23,8 @@ Application server
 ----
 CentOS, Ubuntu or Debian
 ....
-8-16G RAM
-4-8 CPU
+8-32G RAM
+4-16 CPU
 50-100G storage
 ]
 database database1 [
@@ -35,7 +35,7 @@ CentOS, Ubuntu or Debian
 ....
 8-16G RAM
 4-8 CPU
-50-100G storage
+SAN 1T+ Storage
 ]
 database logging1 [
 Logging Server 
@@ -45,7 +45,7 @@ CentOS, Ubuntu or Debian
 ....
 8-16G RAM
 4-8 CPU
-50-100G storage
+SAN 1T+ Storage
 ]
 node nodeintegration1 [
 Integration Security Server
@@ -68,7 +68,8 @@ CentOS, Ubuntu or Debian
 50-100G storage
 ]
 node nodeproxy [
-Continuous Integration Server
+Proxy Server
+2+n
 ----
 CentOS, Ubuntu or Debian
 ....
@@ -81,10 +82,11 @@ Continuous Integration Server
 ----
 CentOS, Ubuntu or Debian
 ....
-8-16G RAM
-4-8 CPU
+8-32G RAM
+4-16 CPU
 50-100G storage
 ]
+database NAS
 
 internet -- firewall
 firewall -- dmz 
@@ -93,13 +95,16 @@ dmz -- nodeci
 dmz -- nodeproxy
 loadbalancer -- nodeas1
 nodeas1 -- database1
-nodeas1 -- nodeintegration1
 nodeas1 -- nodeintegration2
 nodeas1 -- logging1
 loadbalancer -- nodeas2
 nodeas2 -- database1
-nodeas2 -- nodeintegration1
+dmz -- nodeintegration1
+loadbalancer -- nodeintegration2
 nodeas2 -- nodeintegration2
-nodeas2 -- logging1 
-
+nodeas2 -- logging1
+NAS .. nodeas1
+NAS .. nodeas2
+NAS .. logging1
+NAS .. database1
 @enduml
