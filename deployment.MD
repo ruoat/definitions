@@ -5,7 +5,8 @@ endheader
 
 cloud internet
 node nodeas [
-Application server
+Application server 
+2+n
 ----
 CentOS, Ubuntu or Debian
 ....
@@ -13,8 +14,45 @@ CentOS, Ubuntu or Debian
 4-8 CPU
 50-100G storage
 ]
-node node2
-node node3
+database database1 [
+Database Server 
+2+n
+----
+CentOS, Ubuntu or Debian
+....
+8-16G RAM
+4-8 CPU
+50-100G storage
+]
+node nodeintegration1 [
+Integration Security Server
+----
+Ubuntu
+1+n
+....
+8-16G RAM
+4-8 CPU
+50-100G storage
+]
+node nodeintegration2 [
+Integration server
+2+n
+----
+CentOS, Ubuntu or Debian
+....
+8-16G RAM
+4-8 CPU
+50-100G storage
+]
+node nodeci [
+Continuous Integration Server
+----
+CentOS, Ubuntu or Debian
+....
+8-16G RAM
+4-8 CPU
+50-100G storage
+]
 node node4
 database database
 node node5
