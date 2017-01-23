@@ -4,14 +4,14 @@ Deployment diagram generated with plantuml.com to github.com/omahoito. CC-BY-4.0
 endheader
 
 cloud internet
-node node1 [
-CentOS
+node node-as [
+Application server
 ----
-CI Server
+CentOS, Ubuntu or Debian
 ....
 8-16G RAM
-2-8 CPU
-50-100G Storage
+4-8 CPU
+50-100G storage
 ]
 node node2
 node node3
