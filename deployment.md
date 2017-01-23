@@ -22,7 +22,7 @@ CentOS, Ubuntu or Debian
 ....
 32G+ RAM
 4+ CPU
-1T+ storage
+250G+ SSD storage
 2 NIC
 ]
 database database1 [
@@ -55,7 +55,7 @@ Ubuntu
 ....
 16G+ RAM
 4+ CPU
-1T+ storage
+250G+ SSD storage
 2 NIC
 ]
 node nodeintegration2 [
@@ -66,7 +66,7 @@ CentOS, Ubuntu or Debian
 ....
 16G+ RAM
 4+ CPU
-1T+ storage
+250G+ SSD storage
 2 NIC
 ]
 node nodeproxy [
@@ -77,7 +77,7 @@ CentOS, Ubuntu or Debian
 ....
 16G+ RAM
 4+ CPU
-1T+ storage
+250G+ SSD storage
 4 NIC
 ]
 node nodeci [
@@ -87,7 +87,7 @@ CentOS, Ubuntu or Debian
 ....
 32G+ RAM
 4+ CPU
-1T+ storage
+250G+ SSD storage
 2 NIC
 ]
 node nodevm [
