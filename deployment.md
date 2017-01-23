@@ -139,7 +139,6 @@ nodeintegration2 -- VLAN1
 nodeci ~~ nodeintegration2
 logging1 -- VLAN1
 logging1 -- VLAN1
-nodeci ~~ logging1
 nodeas1 -- VLAN1
 nodeas1 -- VLAN1
 nodeci ~~ nodeas1
