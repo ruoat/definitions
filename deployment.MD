@@ -4,20 +4,17 @@ Deployment diagram generated with plantuml.com to github.com/omahoito. CC-BY-4.0
 endheader
 
 cloud internet
-cloud firewall
-cloud dmz
-cloud loadbalancer
-node nodeas1 [
-Application server 
-2+n
-----
-CentOS, Ubuntu or Debian
-....
-8-32G RAM
-4-16 CPU
-50-100G storage
+cloud firewall [ 
+Firewall 1 and 2
 ]
-node nodeas2 [
+cloud dmz
+cloud loadbalancer1 [ 
+Loadbalancer 1 and 2
+]
+interface VLAN1 [
+VLAN 1 and 2 
+]
+node nodeas1 [
 Application server 
 2+n
 ----
@@ -90,27 +87,18 @@ database NAS
 
 internet -- firewall
 firewall -- dmz 
-dmz -- loadbalancer 
+dmz -- loadbalancer1 
+
 dmz -- nodeci
 dmz -- nodeproxy
-loadbalancer -- nodeas1
-nodeas1 -- database1
-nodeas1 -- nodeintegration2
-nodeas1 -- logging1
-loadbalancer -- nodeas2
-nodeas2 -- database1
 dmz -- nodeintegration1
-loadbalancer -- nodeintegration2
-nodeas2 -- nodeintegration2
 nodeintegration1 ~~ logging1
 nodeproxy ~~ logging1
-nodeas1 -- logging1
-loadbalancer -- logging1
-database1 -- logging1
-nodeintegration2 -- logging1
-nodeas2 -- logging1
-NAS .. nodeas1
-NAS .. nodeas2
-NAS .. logging1
-NAS .. database1
+
+loadbalancer1 -- VLAN1
+database1 -- VLAN1
+nodeintegration2 -- VLAN1
+logging1 -- VLAN1
+nodeas1 -- VLAN1
+NAS .. VLAN1
 @enduml
