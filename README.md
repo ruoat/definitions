@@ -2,7 +2,7 @@
 
 ##Deployment architecture
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.md?15) <!--- This generates a picture based on deployment.MD. To change the counter in the url above, i.e. deployment.MD?13 -> deployment.MD?14 --->
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.md?16) <!--- This generates a picture based on deployment.MD. To change the counter in the url above, i.e. deployment.MD?13 -> deployment.MD?14 --->
 
 ###Peruskokoonpanot
 ####Peruskokoonpano 
@@ -10,7 +10,7 @@
 - CentOS, Ubuntu or Debian
 - 32G+ RAM
 - 4+ CPU
-- 1T+ storage
+- 250G+ SSD storage
 - 2 NIC
 
 ####Integraatiopalvelin
@@ -18,7 +18,7 @@
 - CentOS, Ubuntu or Debian
 - 16G+ RAM
 - 4+ CPU
-- 1T+ storage
+- 250G+ SSD storage
 - 2 NIC
 
 ####Proxypalvelin
@@ -26,7 +26,7 @@
 - CentOS, Ubuntu or Debian
 - 16G+ RAM
 - 4+ CPU
-- 1T+ storage
+- 250G+ SSD storage
 - 4 NIC
 
 ###Optiona 
@@ -50,7 +50,7 @@
 - Ubuntu
 - 16G+ RAM
 - 4+ CPU
-- 1T+ storage
+- 250G+ SSD storage
 - 2 NIC
 
 ####Temporary Server 
