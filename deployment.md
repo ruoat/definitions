@@ -109,7 +109,11 @@ database Backup
 internet1 -- firewall
 internet2 -- firewall
 firewall -- DMZ 
+firewall -- DMZ 
+
 DMZ -- loadbalancer1 
+DMZ -- loadbalancer1 
+
 
 DMZ -- nodeci
 firewall -- nodeproxy
