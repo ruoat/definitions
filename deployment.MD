@@ -59,7 +59,7 @@ Ubuntu
 2 NIC
 ]
 node nodeintegration2 [
-Integration server
+Integration Server
 2+n
 ----
 CentOS, Ubuntu or Debian
@@ -89,6 +89,17 @@ CentOS, Ubuntu or Debian
 4+ CPU
 1T+ storage
 2 NIC
+]
+node nodevm [
+Temporary Server 
+0+n
+----
+CentOS, Ubuntu or Debian
+....
+8G+ RAM
+2+ CPU
+100G+ storage
+1 virtual NIC
 ]
 database NAS
 database Backup
