@@ -4,7 +4,7 @@ Deployment diagram generated with plantuml.com to github.com/omahoito. CC-BY-4.0
 endheader
 
 cloud internet
-node node-as [
+node nodeas [
 Application server
 ----
 CentOS, Ubuntu or Debian
