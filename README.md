@@ -77,3 +77,4 @@
 - Palomuuri, VLAN ja Loadbalancer
 
 ###Symbol
+![](logical.png)
