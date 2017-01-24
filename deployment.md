@@ -138,9 +138,11 @@ database1 -- SAN2
 logging1 -- SAN2
 nodeintegration2 -- VLAN1
 nodeintegration2 -- VLAN1
+nodeintegration2 ~~ logging1
 nodeci ~~ nodeintegration2
 logging1 -- VLAN1
 logging1 -- VLAN1
+nodeas1 ~~ logging1
 nodeas1 -- VLAN1
 nodeas1 -- VLAN1
 nodeci ~~ nodeas1
@@ -149,6 +151,7 @@ Backup .. DMZ
 nodeci ~~ Backup
 nodevm .. VLAN1
 nodevm .. DMZ
+nodevm ~~ logging1
 nodeci ~~ nodevm
 NAS .. VLAN1
 @enduml
