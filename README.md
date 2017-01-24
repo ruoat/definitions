@@ -77,9 +77,12 @@
 - Palomuuri, VLAN ja Loadbalancer
 
 ###Symbol
-Logical connections
-![](logical.png)
-Optional connections
-![](optional.png)
-Physical connections
-![](physical.png)
+| Logical connections        | Optional connections           | Physical connections  |
+| ------------- |:-------------:| -----:|
+| ![](logical.png)      | ![](optional.png) | ![](physical.png) |
+
+
+
+
+
+
