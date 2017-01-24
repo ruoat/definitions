@@ -39,7 +39,7 @@
 
 ###Optiona 
 ###Kapasiteettipalveluja optiona
-- SAN kasvattaminen ainakin 100T asti.
+- SAN kasvattaminen ainakin 100T asti. SAN redundancy respective to network environment.
 - NAS low tier 
 - Virtuaalipalvelin
 
