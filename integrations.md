@@ -1,4 +1,4 @@
-﻿# Integrations
+# Integrations
 
 ## Preparing for third party downtime
 
@@ -170,6 +170,15 @@ processing of the failed events must be serialized to a certain degree.
 If one of these events is a creation of a resource and further events update 
 the same resource, ODA must assign some internal identifier to this resource 
 and map this ID to the official identifier assigned by the master data store.
+
+In the following example CaraPlan creation (POST) fails and ODA can’t get 
+resource ID from PHR. A subsequent update (PUT) to the same resource could be 
+done by using an internal ID that is saved to a custom extended attribute. If 
+the resource ID still can’t be resolved, the client has to wait for the retry 
+mechanism to work. Once the resource is created, the internal ID can be mapped 
+to resource id and the update can be retried.
+
+![](http://www.plantuml.com/plantuml/svg/dL5BJm8n4BxlhvXmqiJT4CE911A3-8Y948MJ6bEsWpGkRNTskkA_j_l82hWaoAsTxpLVQmMnYfKLcc6KADGSsArHnqWHBbUAmWmfLp5sG6JWXxiiGgPlI1swYf2smL-6Ff5Al1piSAPtJq6L3-6m280-J2VFCnW9mcaYT53C6kWgozI7BYxlIW9k6BL42OAPrC8nrknDuNl8AVN0EFU9UpYSAJdGBaakQl-1ADEylvBdbThBwstxn-h-j9l_Bt9OTxaTps1BsCOlY64JrElsuD4mt1YdPLlvunU9eYX82tdreoUzNoLjwkn93zRvpRpiTc7o46Z322P7ge1-wUUFZWgTyCVCE8eHxg-1Lu9VTMnS8c61i1RMUWwRUi43fUOdTzfNlYp9hC4IvX5aZFQjrUO7)
 
 **When order of events is not important**
 
