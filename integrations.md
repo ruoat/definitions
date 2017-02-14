@@ -92,13 +92,11 @@ level batch action or an automated job could refresh the data?_
 ### VTJ
 
 VTJ contains basic information about citizen [(name, address, home municipality 
-etc.)]( 
-https://esuomi.fi/palveluntarjoajille/tunnistaminen/tekninen-aineisto/tunnistetu
-sta-kayttajasta-valitettavat-attribuutit/). Suomi.fi identification passes most 
-of this information to ODA when user logs in. Authentication fails in Suomi.fi 
-if VTJ is down. Additional data might also be required directly from VTJ, for 
-example mother tongue. The additional data could be cached to user profile in 
-ODA.
+etc.)](https://esuomi.fi/palveluntarjoajille/tunnistaminen/tekninen-aineisto/tunnistetusta-kayttajasta-valitettavat-attribuutit/). 
+Suomi.fi identification passes most of this information to ODA when user logs 
+in. Authentication fails in Suomi.fi if VTJ is down. Additional data might also
+be required directly from VTJ, for example mother tongue. The additional data 
+could be cached to user profile in ODA.
 
 ### Appointment reservations
 
