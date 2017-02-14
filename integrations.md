@@ -6,6 +6,10 @@ Downtime could be due to any planned or unplanned incident that prevents ODA
 from using the remote system. The fault may be for example in the remote 
 system, in some ODA component or connection between them.
 
+All failures and failed attempts must be logged and monitored. If failures are 
+rare, it might not be cost-effective to implement failback mechanisms. On the 
+other hand, if failures are common, they degrade ODA user experience.
+
 ### Suomi.fi identification
 
 ODA depends on Suomi.fi e-Identification for strong authentication and citizen 
@@ -29,8 +33,9 @@ to be encrypted?_
 ### Kanta
 #### Read operations
 ODA will read prescriptions and information about previous encounters from 
-Kanta. If this information would be used to prefill forms on behalf of citizen, 
-the user would have to fill in the information manually.
+Kanta. Some of this information could be used to prefill forms on behalf of 
+citizen. If Kanta data can’t be read the user would have to fill in the 
+information manually.
 
 _TODO: Analyze the effects on the UI components used by professionals_
 _TBD: Can the data be kept in a cache and on what conditions?_
@@ -44,7 +49,7 @@ My Kanta will contain care plans, observations and other patient data that will
 be displayed and edited in ODA. My Kanta will provide FHIR (STU 3) API. FHIR 
 resources, including their version information and timestamps, could be kept in 
 cache in ODA - perhaps even in the client. FHIR standard specifies versioning 
-and mechanisms for managing lost updates. On the other hand, HFIR specifies 
+and mechanisms for managing lost updates. On the other hand, FHIR specifies 
 that the FHIR server may change the resource during create or update. This 
 means that the unsaved (cached) resources should be refreshed from the server 
 after saving.
@@ -76,7 +81,9 @@ Terhikki is a registry of social welfare and health care professionals. Access
 to Terhikki is needed when person’s rights to act as a registered 
 professional is checked. The check could be done when new professionals are 
 added to system and organizations. This reduces dependency to Terhikki, but 
-revoked and granted rights must be handled.
+revoked and granted rights must be handled. System must not under any 
+circumstances allow some person to act as a professional if that person is not 
+a professional. 
 
 _TBD: How and when are rights updated? Professional’s profile view could have 
 an action to fetch rights from Terhikki. Additionally, system/organization 
@@ -104,7 +111,9 @@ via chat and a phone number (that is saved in ODA) could be displayed.
 
 ### VRK geolocation data
 
-Health center areas, addresses etc. should be downloaded into ODA database.
+Health center areas, addresses etc. should be downloaded into ODA database. The 
+downloaded data must be refreshed regularly, because the data set might contain 
+outdated, incorrect or missing values.
 
 ### Minimum context management
 
@@ -136,7 +145,13 @@ The same security constraints must be apply whether the data is accessed in the
 master data source or the cache. Per user cache would be the most secure but 
 also the most resource intensive. The data must not leak from the cache. 
 Special care should be taken if the cache is in client side (browser or mobile 
-application).
+application). The data must be deleted from client as soon as it is no longer 
+needed to avoid leaks. The server must check the validity of everything coming 
+from the client side.
+
+All cache actions must be logged and some need to be monitored perhaps even on 
+a real-time basis. In particular, all failures and failed attempts need to be 
+logged.
 
 ## Guaranteed asynchronous persistence to master data stores
 
