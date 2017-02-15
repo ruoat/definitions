@@ -28,8 +28,12 @@ ODA_WEB_UI <-- ODA_FHIR_API: Bundle [collection of questionnaires]
 ODA_WEB_UI -> ODA_WEB_UI: Select the questionnaire
 ODA_WEB_UI -> ODA_FHIR_API: POST [oda-fhir-base]/Questionnaire/[id]/$populate
 ODA_FHIR_API -> ODA_PHR: GET [phr-fhir-base]/Questionnaire/[id]
-ODA_FHIR_API <-- ODA_PHR : HTTP 200 OK  [Questionnaire]
+ODA_FHIR_API <-- ODA_PHR: HTTP 200 OK  [Questionnaire]
+
+ODA_FHIR_API -> OMAKANTA: GET [omakanta data for pre-population purposes]
+ODA_FHIR_API <- OMAKANTA: HTTP 200 OK [omakanta data for pre-population purposes]
 ODA_FHIR_API -> ODA_FHIR_API: Pre-populate the questionnaireResponse
+
 ODA_WEB_UI <-- ODA_FHIR_API: HTTP 200 OK  [QuestionnaireResponse]
 
 ODA_WEB_UI -> ODA_WEB_UI: Fill in the questionnaire response
