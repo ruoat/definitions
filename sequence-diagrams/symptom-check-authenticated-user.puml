@@ -30,9 +30,12 @@ ODA_WEB_UI -> ODA_FHIR_API: POST [oda-fhir-base]/Questionnaire/[id]/$populate
 ODA_FHIR_API -> ODA_PHR: GET [phr-fhir-base]/Questionnaire/[id]
 ODA_FHIR_API <-- ODA_PHR: HTTP 200 OK  [Questionnaire]
 
-ODA_FHIR_API -> OMAKANTA: GET [omakanta data for pre-population purposes]
-ODA_FHIR_API <- OMAKANTA: HTTP 200 OK [omakanta data for pre-population purposes]
-ODA_FHIR_API -> ODA_FHIR_API: Pre-populate the questionnaireResponse
+ODA_FHIR_API -> ODA_FHIR_API: resolve pre-population Observation codes from Questionnaire
+ODA_FHIR_API -> ODA_PHR: GET [oda-fhir-base]/Observation?code=[system]|[code],[system]|[code],[system]|[code] ...
+ODA_FHIR_API <- ODA_PHR: HTTP 200 OK [Bundle - collection of latest observations]
+ODA_FHIR_API -> ODA_PHR: GET [oda-fhir-base]/QuestionnaireResponse?questionnaire=[id]
+ODA_FHIR_API <- ODA_PHR: HTTP 200 OK [Latest QuestionnaireResponse for Questionnaire]
+ODA_FHIR_API -> ODA_FHIR_API: Pre-populate the QuestionnaireResponse [use Observations and latest QuestionnaireResponse]
 
 ODA_WEB_UI <-- ODA_FHIR_API: HTTP 200 OK  [QuestionnaireResponse]
 
