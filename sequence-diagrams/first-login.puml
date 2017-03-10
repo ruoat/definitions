@@ -22,6 +22,8 @@ ODA_FHIR_API <-- ODA_PHR: HTTP 200 OK [Empty bundle - person not found]
 ODA_WEB_UI <-- ODA_FHIR_API: HTTP 200 OK [Empty bundle - patient not found]
 
 ODA_WEB_UI -> ODA_FHIR_API: POST [oda-fhir-base]/Patient/$createaccount
+
+ODA_WEB_UI -> ODA_WEB_UI: Accept terms and conditions
 ODA_FHIR_API -> ODA_PHR: POST [oda-phr-base]/Patient
 ODA_FHIR_API <-- ODA_PHR: HTTP 201 Created [OperationOutcome]
 ODA_FHIR_API -> ODA_PHR: POST [oda-phr-base]/Person
