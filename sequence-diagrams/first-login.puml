@@ -26,12 +26,10 @@ ODA_WEB_UI -> ODA_WEB_UI: Accept terms and conditions
 
 ODA_WEB_UI -> ODA_FHIR_API: POST [oda-fhir-base]/Patient/$createaccount
 
-ODA_FHIR_API -> ODA_PHR: POST [oda-phr-base]/Patient
-ODA_FHIR_API <-- ODA_PHR: HTTP 201 Created [OperationOutcome]
-ODA_FHIR_API -> ODA_PHR: POST [oda-phr-base]/Person
-ODA_FHIR_API <-- ODA_PHR: HTTP 201 Created [OperationOutcome]
+ODA_FHIR_API -> ODA_PHR: POST [oda-phr-base]/
+ODA_FHIR_API <-- ODA_PHR: HTTP 200 OK [Bundle with transaction results]
  
-ODA_WEB_UI <-- ODA_FHIR_API: HTTP 201 Created [OperationOutcome]
+ODA_WEB_UI <-- ODA_FHIR_API: HTTP 200 OK [Bundle with transaction results]
 
 @enduml
 
