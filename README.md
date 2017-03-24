@@ -1,5 +1,7 @@
 # ODA definitions
 
+* [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaatteet.md)
+* [Code Conventions](codeconventions.md)
 * [Working with diagrams](diagrams.md)
 * [Codes and code systems](codesets.md)
 * [Integrations](integrations.md)
@@ -9,7 +11,7 @@
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.md?31) <!--- This generates a picture based on deployment.md. To change the counter in the url above, i.e. deployment.md?13 -> deployment.md?14 --->
 
 ###Peruskokoonpanot
-####Peruskokoonpano 
+####Peruskokoonpano
 - 3+n kappaletta
 - CentOS 7, Ubuntu 16 or Debian 8
 - 32G+ RAM
@@ -49,13 +51,13 @@
 - Ylläpitoasiantuntija t&m
 - Konesaliasiantuntija/arkkitehti t&m
 
-###Optiona 
+###Optiona
 ###Kapasiteettipalveluja optiona
 - SAN kasvattaminen ainakin 100T asti. SAN redundancy respective to network environment.
-- NAS low tier 
+- NAS low tier
 - Virtuaalipalvelin
 
-####Database Server 
+####Database Server
 - 2+n kappaletta
 - CentOS 7, Ubuntu 16 or Debian 8
 - 32G+ RAM
@@ -63,7 +65,7 @@
 - SAN 1T+ Storage
 - 2 NIC
 
-####Logging Server 
+####Logging Server
 - 2+n
 - CentOS 7, Ubuntu 16 or Debian 8
 - 16G+ RAM
@@ -78,7 +80,7 @@
 - 250G+ SSD storage
 - 2 NIC
 
-####Temporary Server 
+####Temporary Server
 - CentOS 7, Ubuntu 16 or Debian 8
 - 8G+ RAM
 - 2+ CPU
@@ -92,9 +94,3 @@
 | Logical connections        | Optional connections           | Physical connections  |
 | ------------- |:-------------:| -----:|
 | ![](logical.png)      | ![](optional.png) | ![](physical.png) |
-
-
-
-
-
-
