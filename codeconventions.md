@@ -1,4 +1,4 @@
-# Code conventions
+# Code Conventions
 ## Source code format
 ODA source code is developed on various platforms and editors. Therefore common formatting should be used:
 - Prefer US-ASCII characters in source code. Non-ascii characters should be encoded, e.g., ä -> \u00e4.
