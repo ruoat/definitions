@@ -18,12 +18,13 @@ end note
 box "ODA 2" #LightBlue
 	participant ODA_WEB_UI
 	participant ODA_FHIR_API
+	participant ODA_PHR
 end box
 
-ODA_WEB_UI -> ODA_FHIR_API: GET [oda-fhir-base]/Questionnaire?useContext=[system]|[code]
-ODA_FHIR_API -> ODA_PHR: GET [oda-fhir-base]/Questionnaire?useContext=[system]|[code]
+ODA_WEB_UI -> ODA_FHIR_API: GET [oda-fhir-base]/Questionnaire?context=[system]|[code]&_language=[value]
+ODA_FHIR_API -> ODA_PHR: GET [oda-fhir-base]/Questionnaire?context=[system]|[code]&_language=[value]
 ODA_FHIR_API <-- ODA_PHR: HTTP 200 OK [Bundle - collection of questionnaires]
-ODA_WEB_UI <-- ODA_FHIR_API: Bundle [collection of questionnaires]
+ODA_WEB_UI <-- ODA_FHIR_API: Bundle [Collection of questionnaires]
 
 ODA_WEB_UI -> ODA_WEB_UI: Select the questionnaire
 ODA_WEB_UI -> ODA_FHIR_API: POST [oda-fhir-base]/Questionnaire/[id]/$populate
@@ -34,27 +35,23 @@ ODA_FHIR_API -> ODA_FHIR_API: resolve pre-population Observation codes from Ques
 ODA_FHIR_API -> ODA_PHR: GET [oda-fhir-base]/Observation?code=[system]|[code],[system]|[code],[system]|[code] ...
 ODA_FHIR_API <- ODA_PHR: HTTP 200 OK [Bundle - collection of latest observations]
 ODA_FHIR_API -> ODA_PHR: GET [oda-fhir-base]/QuestionnaireResponse?questionnaire=[id]
-ODA_FHIR_API <- ODA_PHR: HTTP 200 OK [Latest QuestionnaireResponse for Questionnaire]
-ODA_FHIR_API -> ODA_FHIR_API: Pre-populate the QuestionnaireResponse [use Observations and latest QuestionnaireResponse]
+ODA_FHIR_API <- ODA_PHR: HTTP 200 OK [Latest questionnaire response for questionnaire]
+ODA_FHIR_API -> ODA_FHIR_API: Pre-populate the QuestionnaireResponse \n [Use observations and the latest questionnaire response]
 
 ODA_WEB_UI <-- ODA_FHIR_API: HTTP 200 OK  [QuestionnaireResponse]
 
 ODA_WEB_UI -> ODA_WEB_UI: Fill in the questionnaire response
-ODA_WEB_UI -> ODA_FHIR_API: POST [oda-fhir-base]/QuestionnaireResponse/$checkSymptoms
-ODA_FHIR_API -> ODA_FHIR_API: Generate DSSRequest
-ODA_FHIR_API -> ODA1: POST [oda1_base]/DSSRequest
-ODA_FHIR_API <-- ODA1: DSSResponse
-ODA_FHIR_API -> ODA_FHIR_API: generate CarePlan (include QuestionnaireResponse as a CarePlan.support reference)
+ODA_WEB_UI -> ODA_FHIR_API: POST [oda-fhir-base]/QuestionnaireResponse/$check-symptoms \n [Parameters containing questionnaire response]
+ODA_FHIR_API -> ODA1: POST [oda1_base]/$check-symptoms \n [Parameters containing questionnaire response]
+ODA_FHIR_API <-- ODA1: HTTP 200 OK [Bundle - collection of activity definitions]
+ODA_FHIR_API -> ODA_FHIR_API: generate CarePlan \n (include questionnaire response as a CarePlan.support reference \n & add activity definitions as CarePlan.activities)
 ODA_WEB_UI <-- ODA_FHIR_API: HTTP 200 OK [CarePlan]
 
 ODA_WEB_UI -> ODA_WEB_UI: View/Edit/Confirm/Cancel CarePlan
-ODA_WEB_UI -> ODA_FHIR_API: POST [oda-fhir-base]/CarePlan
-ODA_FHIR_API -> ODA_PHR: POST [phr-fhir-base]/CarePlan
-ODA_FHIR_API <-- ODA_PHR: HTTP 201 Created, Location: [phr-fhir-base]]/CarePlan/[id]/_history/[vid]
-ODA_FHIR_API -> ODA_PHR: POST [phr-fhir-base]/QuestionnaireResponse
-ODA_FHIR_API <- ODA_PHR: HTTP 201 Created, Location: [phr-fhir-base]/QuestionnaireResponse/[id]/_history/[vid]
+ODA_WEB_UI -> ODA_FHIR_API: POST [oda-fhir-base]/CarePlan/$activate [Parameters containing care plan]
 ODA_FHIR_API -> ODA_FHIR_API: Generate Observations
-ODA_FHIR_API -> ODA_PHR: POST [phr-fhir-base]/?_format=transaction [Bundle - collection of observations]
-ODA_FHIR_API <- ODA_PHR: HTTP 200 OK [Bundle - collection of observations]
-ODA_WEB_UI <- ODA_FHIR_API: HTTP 201 Created, Location: [phr-fhir-base]/CarePlan/[id]/_history/[vid]
+ODA_FHIR_API -> ODA_PHR: POST [phr-fhir-base]/?_format=transaction \n [Bundle - care plan, questionnaire response, collection of observations]
+ODA_FHIR_API <- ODA_PHR: HTTP 200 OK [Bundle - \n HTTP 201 Created, Location: [phr-fhir-base]]/CarePlan/[id]/_history/[vid]... ]
+
+ODA_WEB_UI <- ODA_FHIR_API: HTTP 200 OK [Bundle - \n HTTP 201 Created, Location: [phr-fhir-base]]/CarePlan/[id]/_history/[vid]... ]
 @enduml
