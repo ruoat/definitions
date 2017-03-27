@@ -1,18 +1,23 @@
 # Code Conventions
 ## Source code format
 ODA source code is developed on various platforms and editors. Therefore common formatting should be used:
-- Prefer US-ASCII characters in source code. Non-ascii characters should be encoded, e.g., ä -> \u00e4.
-  * In Eclipse, you can use AnyEdit Tools plugin: Convert > To Unicode Notation.
-- Use UTF-8 in code comments and other information intended for other developers.
-  * Eclipse: (Project) > Properties > Resources > "Text file encoding: Other: UTF-8"
 - Use four spaces for indentation. Tabs must not be used.
-  * Eclipse: Window > Preferences > General > Editors > Text Editors > "Displayed tab width:4"; "Insert spaces for tabs:check"
-  * Eclipse: Window > Preferences > Java > Code Style > Formatter > Indentation > tab policy : Spaces only
 - Use UNIX newlines `\n`.
+- Prefer US-ASCII characters in source code. Non-ascii characters should be encoded, e.g., ä -> \u00e4.
+- Use UTF-8 in code comments and other information intended for other developers.
+
+### Eclipse settings
+- UTF-8
+  * (Project) > Properties > Resources > "Text file encoding: Other: UTF-8"
+- Spaces
+  * Window > Preferences > General > Editors > Text Editors > "Displayed tab width:4"; "Insert spaces for tabs:check"
+  * Window > Preferences > Java > Code Style > Formatter > Indentation > tab policy : Spaces only
 - Allow * in imports
-  * Eclipse Window > Preferences > Java > Code Style > Organize Imports > "Number of imports needed for .* = 2"; "Number of static imports needed for .* =2"
+  * Window > Preferences > Java > Code Style > Organize Imports > "Number of imports needed for .* = 2"; "Number of static imports needed for .* =2"
 - Keep source formatting to edited lines only
-  * Eclipse Window > Preferences > Java > Editor > Save Actions > Format source code: check "Format edited lines"
+  * Window > Preferences > Java > Editor > Save Actions > Format source code: check "Format edited lines"
+- Encoding Non-ascii characters:
+  * AnyEdit Tools plugin: Convert > To Unicode Notation.
 
 ## Java
 - If methods need to return empty values use `Optional` instead of nulls.
@@ -44,11 +49,10 @@ ODA source code is developed on various platforms and editors. Therefore common 
 ## JavaScript
 - In JavaScript we use camelCase.
 - JavaScript is standardised to and validated towards ES6.
-- JavaScript is built with Cradle that is available in each repositories' cradle.w.
-https://github.com/ryanmcdermott/clean-code-javascript
+- https://github.com/ryanmcdermott/clean-code-javascript
 
 ## React
-https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
+- https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
 
 ## Build Tools
 - In Java we use `./gradlew clean build`
