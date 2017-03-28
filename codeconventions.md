@@ -49,6 +49,8 @@ ODA source code is developed on various platforms and editors. Therefore common 
 ## JavaScript
 - In JavaScript we use camelCase.
 - JavaScript is standardised to and validated towards ES6.
+- JSX-content uses double quotes. Single quotes everywhere else. (ESLint rule: jsx-quotes)
+- No spaces around objects (ESLint rule: babel/object-curly-spacing)
 - https://github.com/ryanmcdermott/clean-code-javascript
 
 ## React
