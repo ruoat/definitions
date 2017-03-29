@@ -11,6 +11,7 @@
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.md?31) <!--- This generates a picture based on deployment.md. To change the counter in the url above, i.e. deployment.md?13 -> deployment.md?14 --->
 
 ###Peruskokoonpanot
+
 ####Peruskokoonpano
 - 3+n kappaletta
 - CentOS 7, Ubuntu 16 or Debian 8
