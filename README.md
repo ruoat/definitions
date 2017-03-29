@@ -10,9 +10,9 @@
 
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.md?31) <!--- This generates a picture based on deployment.md. To change the counter in the url above, i.e. deployment.md?13 -> deployment.md?14 --->
 
-###Peruskokoonpanot
+### Peruskokoonpanot
 
-####Peruskokoonpano
+#### Peruskokoonpano
 - 3+n kappaletta
 - CentOS 7, Ubuntu 16 or Debian 8
 - 32G+ RAM
@@ -20,7 +20,7 @@
 - 250G+ SSD storage
 - 2 NIC
 
-####Integraatiopalvelin
+#### Integraatiopalvelin
 - 2+n kappaletta
 - CentOS 7, Ubuntu 16 or Debian 8
 - 16G+ RAM
@@ -28,7 +28,7 @@
 - 250G+ SSD storage
 - 2 NIC
 
-####Proxypalvelin
+#### Proxypalvelin
 - 2+n kappaletta
 - CentOS 7, Ubuntu 16 or Debian 8
 - 16G+ RAM
@@ -36,7 +36,7 @@
 - 250G+ SSD storage
 - 4 NIC
 
-####Continuous Integration Server
+#### Continuous Integration Server
 - 1 kappale
 - CentOS 7, Ubuntu 16 or Debian 8
 - 32G+ RAM
@@ -44,21 +44,21 @@
 - 250G+ SSD storage
 - 4 NIC
 
-###Kapasiteettipalveluja
+### Kapasiteettipalveluja
 - Backup
 
-###Asiantuntijapalvelut
+### Asiantuntijapalvelut
 - Sysadmin palvelut 24/7
 - Ylläpitoasiantuntija t&m
 - Konesaliasiantuntija/arkkitehti t&m
 
-###Optiona
-###Kapasiteettipalveluja optiona
+### Optiona
+### Kapasiteettipalveluja optiona
 - SAN kasvattaminen ainakin 100T asti. SAN redundancy respective to network environment.
 - NAS low tier
 - Virtuaalipalvelin
 
-####Database Server
+#### Database Server
 - 2+n kappaletta
 - CentOS 7, Ubuntu 16 or Debian 8
 - 32G+ RAM
@@ -66,7 +66,7 @@
 - SAN 1T+ Storage
 - 2 NIC
 
-####Logging Server
+#### Logging Server
 - 2+n
 - CentOS 7, Ubuntu 16 or Debian 8
 - 16G+ RAM
@@ -74,24 +74,24 @@
 - SAN 1T+ Storage
 - 2 NIC
 
-####Integration Security Server
+#### Integration Security Server
 - CentOS 7 or Ubuntu 14
 - 16G+ RAM
 - 4+ CPU
 - 250G+ SSD storage
 - 2 NIC
 
-####Temporary Server
+#### Temporary Server
 - CentOS 7, Ubuntu 16 or Debian 8
 - 8G+ RAM
 - 2+ CPU
 - 100G+ storage
 - 1 virtual NIC
 
-####Verkkopalveluja
+#### Verkkopalveluja
 - Palomuuri, VLAN ja Loadbalancer
 
-###Symbol
+### Symbol
 | Logical connections        | Optional connections           | Physical connections  |
 | ------------- |:-------------:| -----:|
 | ![](logical.png)      | ![](optional.png) | ![](physical.png) |
