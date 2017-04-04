@@ -1,1 +1,9 @@
 
+ODA Time Booking searches schedules with serviceproduct code (as agreed above, to simplify the case).
+FHIR service returns a bundle of Schedules.
+ODA Time Booking searches bundle data for slots of freeBusyType = FREE
+ODA Time Booking writes appointment status = pending, and print pending Appointments to user. (or status = booked if "pending" is not supported by target system)
+EHR writes slot as freeBusyType = BUSY-TENTATIVE (or freeBusyType = BUSY if not supported by target system)
+User confirms and Appointment status = booked is written.
+EHR writes slot as freeBusyType = BUSY
+Slots that are freeBusyType = BUSY-TENTATIVE but too old, ie. more than 5 minutes, or freeBusyType = BUSY but not status = booked, are written as freeBusyType = FREE.
