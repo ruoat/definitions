@@ -1,5 +1,9 @@
 # Integrations
 
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/masterdata.plantuml?1) 
+<!-- This generates a picture based on masterdata.plantuml. To change the counter in the url above, i.e. masterdata.plantuml?13 -> masterdata.plantuml?14 -->
+
+
 ## Preparing for third party downtime
 
 Downtime could be due to any planned or unplanned incident that prevents ODA 
