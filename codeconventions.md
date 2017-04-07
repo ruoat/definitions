@@ -61,6 +61,20 @@ ODA source code is developed on various platforms and editors. Therefore common 
 - In JavaScript `yarn install`
 - Others `./build.sh`
 
+## Version control / Git & code review
+- Develop in master branch
+- Keep your local master up-to-date
+- Amend / squash commits that add to another commit (for example, fixes)
+- Push small, complete changes as often as possible
+- When ready to push:
+  1. Tiny one commit change?
+    - Have someone review the change before pushing or push the change and have someone review the specific commit
+  2. Larger than tiny or multiple commit change?
+    1. Rebase all changes from master so that your commits are on top
+    2. Create feature-branch that includes all your commits and push
+    3. Create pull-request and share the pull request to review the change
+    4. Merge to master immediately or at least within few hours
+
 ## Misc
 
 Master the conventions, but also keep in mind the crucial non-code aspects of software development. While bad code has sometimes contributed to project failures, in most cases the problems have run deeper.
