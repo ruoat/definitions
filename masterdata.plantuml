@@ -1,0 +1,69 @@
+@startuml
+header
+Master data diagram generated with plantuml.com to github.com/omahoito/definitions. \
+CC-BY-4.0 City of Espoo 2017. \
+To change the picture, make a pull request with changes to masterdata.plantuml and integrations.md.
+endheader
+
+folder Kela {
+    database Kanta
+    database Kansa
+    database PHR
+
+    artifact eResepti
+    artifact eArkisto
+
+    eResepti --* Kanta
+    eArkisto --* Kanta
+}
+
+folder ODA {
+    database "oda-phr" as odaphr
+    agent SSO
+
+    odaphr -- SSO
+}
+
+
+folder VRK {
+    database VTJ
+    database valtuudet
+}
+
+folder Valvira {
+    database Terhikki
+}
+
+folder THL {
+    database Codeserver
+}
+
+agent EHR
+
+EHR -> Kanta
+
+
+agent "Suomi.fi tunnistus" as suomifi
+suomifi -- VTJ
+
+agent Ajanvaraus
+
+SSO -- suomifi
+SSO -- Terhikki
+SSO -- Codeserver
+SSO -- VTJ
+SSO -- valtuudet
+
+odaphr -- Codeserver
+odaphr -- Ajanvaraus
+odaphr -- EHR : Ajanvaraus
+odaphr -- Kansa
+odaphr -- PHR
+
+agent Mittalaitteet
+
+Mittalaitteet -- odaphr
+Ajanvaraus -- EHR
+
+
+@enduml
