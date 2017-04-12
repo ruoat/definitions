@@ -1,7 +1,6 @@
 # Code Conventions
 ## Source code format
 ODA source code is developed on various platforms and editors. Therefore common formatting should be used:
-- Use four spaces for indentation. Tabs must not be used.
 - Use UNIX newlines `\n`.
 - Prefer US-ASCII characters in source code. Non-ascii characters should be encoded, e.g., ä -> \u00e4.
 - Use UTF-8 in code comments and other information intended for other developers.
@@ -20,6 +19,7 @@ ODA source code is developed on various platforms and editors. Therefore common 
   * AnyEdit Tools plugin: Convert > To Unicode Notation.
 
 ## Java
+- Use four spaces for indentation. Tabs must not be used.
 - If methods need to return empty values use `Optional` instead of nulls.
 - Return empty collections instead of nulls.
 - Use assertions like `this.bar = Objects.requireNonNull(bar);` to set potentially null value. Or `org.springframework.util.Assert.*`
@@ -47,10 +47,13 @@ ODA source code is developed on various platforms and editors. Therefore common 
 - Use constructor injection instead of setter injection.
 
 ## JavaScript
+- Use two spaces for indentation. Tabs must not be used.
 - In JavaScript we use camelCase.
 - JavaScript is standardised to and validated towards ES6.
 - JSX-content uses double quotes. Single quotes everywhere else. (ESLint rule: jsx-quotes)
 - No spaces around objects (ESLint rule: babel/object-curly-spacing)
+- Use flowtype to type-check outgoing and incoming data
+- Keep necessary dependencies in as few files as possible so that they can be easily swapped later if needed
 - https://github.com/ryanmcdermott/clean-code-javascript
 
 ## React
