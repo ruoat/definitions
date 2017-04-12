@@ -1,0 +1,40 @@
+@startuml
+header
+Time booking sequence diagram generated with plantuml.com to github.com/omahoito/definitions. \
+CC-BY-4.0 City of Espoo 2017. \
+To change the picture, make a pull request with changes to appointment.plantuml.
+endheader
+
+actor Client
+participant "ODA Time Booking" as ODA
+participant "EHR/AVPH FHIR Service" as av
+
+Client -> ODA : Get and pre-book next available appointment
+
+ODA -> av : Search schedules with serviceproduct code
+av <-> EHR : Get time slots, freeBusyType=FREE
+av -> ODA : FHIR service returns a bundle of Schedules and Slots
+
+ODA -> ODA : Resolve next slot to book for current user
+
+ODA -> av : Book appointment for resolved slot
+
+av -> EHR : Write slot as freeBusyType = BUSY-TENTATIVE\n\
+ (or freeBusyType = BUSY if not supported by target system)
+
+ODA -> Client : Return pre-booked appointment
+
+group 5 Minute Interval Timer
+note over of ODA
+Cancel pre-booked appointments that are not confirmed
+end note
+ODA -> av: Cancel pre-booked appointment
+av -> EHR: Write slot as freeBusyType = FREE
+end
+
+Client -> ODA : Confirm
+
+ODA -> av : Write Appointment status = booked
+av -> EHR : write slot as freeBusyType = BUSY
+
+@enduml
