@@ -42,6 +42,10 @@ ODA source code is developed on various platforms and editors. Therefore common 
 
 ## Application Interfaces
 - In API:s, we use PascalCase.
+- We use [Netflix zuul](https://github.com/Netflix/zuul) as an API gateway.
+  At the time of writing the service registry is static, but in the future
+  micro services shall register themselves to an 
+  [Eureka](https://github.com/Netflix/eureka) server.
 
 ## Spring Framework
 - Use constructor injection instead of setter injection.
