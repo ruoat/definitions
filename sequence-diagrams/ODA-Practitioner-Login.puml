@@ -1,0 +1,47 @@
+@startuml
+actor Professional
+
+participant ODA_WEB_UI
+participant ODA_FHIR_API
+participant ODA_PHR
+
+note left of ODA_WEB_UI #aqua
+Pre-Condition 1: User is logged in via professional URL
+end note
+
+
+Professional -> ODA_WEB_UI: Request data from PHR
+ODA_WEB_UI -> ODA_FHIR_API: GET [oda-fhir-base]/Practitioner/$searchbynationalid?nationalid=HETU
+ODA_FHIR_API -> ODA_PHR: GET[oda-phr-base]/Person?identifier=HETU
+group Case: Practitioner not created yet
+note left of ODA_WEB_UI #aqua
+Pre-Condition 2: User does not have an ODA account yet
+end note
+group Case: Person does not exist
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Empty bundle - Person not found]
+end
+group Case: Person already exists
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with Person resource]
+ODA_FHIR_API -> ODA_PHR: GET[oda-phr-base]/Practitioner/{id}
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Empty bundle - Practitioner not found]
+end
+ODA_FHIR_API --> ODA_WEB_UI: HTTP 200 OK [Empty bundle - Practitioner not found]
+ODA_WEB_UI --> Professional: Error - Not allowed
+end
+
+group Case: Practitioner already created
+note left of ODA_WEB_UI #aqua
+Pre-Condition 2: User has an ODA account already
+end note
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with Person resource]
+ODA_FHIR_API -> ODA_PHR: GET[oda-phr-base]/Practitioner/{id}
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with Practitioner resource]
+ODA_FHIR_API --> ODA_WEB_UI: HTTP 200 OK [Bundle with Practitioner resource]
+Professional -> ODA_WEB_UI: Edit profile data
+ODA_WEB_UI -> ODA_FHIR_API: PUT [oda-fhir-base]/Practiotioner/{id}
+ODA_FHIR_API -> ODA_PHR: PUT [oda-fhir-base]/Practiotioner/{id}
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK
+ODA_FHIR_API --> ODA_WEB_UI: HTTP 200 OK
+ODA_WEB_UI --> Professional: Profile saved
+end
+@enduml

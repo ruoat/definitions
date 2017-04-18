@@ -1,0 +1,38 @@
+@startuml 
+header
+Sequence diagram generated with plantuml.com to github.com/omahoito. CC-BY-4.0 City of Espoo 2017. 
+To change the picture, make a pull request with changes to ODA-Careplan-Comment.plantuml and README.md.
+endheader
+
+actor sender
+actor recipient
+participant ODA_WEB_UI
+participant ODA_FHIR_API
+participant ODA_PHR
+participant ODA_NOTIFICATION_SERVICE
+
+
+sender -> ODA_WEB_UI: Add comment to careplan
+ODA_WEB_UI -> ODA_WEB_UI: Generate new Communication resource
+ODA_WEB_UI -> ODA_FHIR_API: POST [oda-fhir-base]/Communication
+ODA_FHIR_API -> ODA_PHR: POST [oda-fhir-base]/Communication
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK
+ODA_FHIR_API -> ODA_NOTIFICATION_SERVICE: New notification [context(patient, careplan, communication)]
+ODA_NOTIFICATION_SERVICE -> ODA_WEB_UI: Send notification to web-socket
+group If context (i.e. careplan) is open
+ODA_WEB_UI -> ODA_PHR: GET [oda-phr-base]/Communication/$search?topic=CarePlan/{id} 
+ODA_PHR --> ODA_WEB_UI: HTTP 200 OK [Bundle with communication resources]
+ODA_WEB_UI -> recipient: Show comment in context
+end
+
+group If context (i.e. careplan) is NOT open
+ODA_WEB_UI -> recipient: Show notification
+recipient -> ODA_WEB_UI: Open/activate notification
+ODA_WEB_UI -> ODA_PHR: GET [oda-phr-base]/CarePlan/{id} 
+ODA_PHR --> ODA_WEB_UI: HTTP 200 OK
+ODA_WEB_UI -> recipient: Show careplan with new comment(s)
+end
+
+
+
+@enduml

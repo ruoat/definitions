@@ -1,0 +1,50 @@
+@startuml
+actor Professional
+
+participant ODA_WEB_UI
+participant ODA_FHIR_API
+participant ODA_PHR
+
+note left of ODA_WEB_UI #aqua
+Pre-Condition 1: User is logged in via professional URL
+end note
+
+Professional -> ODA_WEB_UI: Open service request lists -view
+ODA_WEB_UI -> ODA_FHIR_API: GET [oda-fhir-base]/CareTeam/$searchservicerequests?Practitioner={id}
+note left of ODA_FHIR_API #aqua
+Search all CareTeams professional belongs to
+end note
+ODA_FHIR_API -> ODA_PHR: GET [oda-phr-base]/CareTeam?Practitioner={id}
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with CareTeam resources]
+note left of ODA_FHIR_API #aqua
+Search all CarePlans professional is authorized to access
+end note
+ODA_FHIR_API -> ODA_PHR: GET [oda-phr-base]/CarePlan?CareTeam={id}
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with CarePlan resources]
+note left of ODA_FHIR_API #aqua
+Search all Episodes of Care professional is participating to
+end note
+ODA_FHIR_API -> ODA_PHR: GET [oda-phr-base]/EpisodeOfCare/$searchbycareplan?CarePlan={id}
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with EpisodeOfCare resources]
+note left of ODA_FHIR_API #aqua
+Search patients' personal info for UI
+end note
+ODA_FHIR_API -> ODA_PHR: GET [oda-phr-base]/Patient/$getpersonaldata?Patient={id}
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with Patient and Person resources]
+ODA_FHIR_API -> ODA_FHIR_API: Add caremanager and patient info to CarePlan resource
+ODA_FHIR_API --> ODA_WEB_UI: HTTP 200 OK [Bundle with CareTeam and CarePlan resources]
+ODA_WEB_UI --> Professional: Service request lists authorized to user
+Professional -> ODA_WEB_UI: Select task/careplan and take responsibility
+
+
+ODA_WEB_UI -> ODA_FHIR_API: [oda-fhir-base]/CarePlan/{id}/$assign?Practitioner={id}
+
+note left of ODA_FHIR_API #aqua
+Update (if exists) or create new EpisodeOfCare and set 
+careManager reference to Practitioner
+end note
+ODA_FHIR_API -> ODA_PHR: POST [oda-phr-base]/EpisodeOfCare
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK
+ODA_FHIR_API --> ODA_WEB_UI: HTTP 200 OK
+
+@enduml
