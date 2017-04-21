@@ -8,7 +8,8 @@
 
 ## Deployment architecture
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.md?31) <!--- This generates a picture based on deployment.md. To change the counter in the url above, i.e. deployment.md?13 -> deployment.md?14 --->
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.plantuml?1) 
+<!-- This generates a picture based on deployment.md. To change the counter in the url above, i.e. deployment.plantuml?13 -> deployment.plantuml?14 -->
 
 ### Peruskokoonpanot
 
