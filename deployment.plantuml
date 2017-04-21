@@ -1,0 +1,157 @@
+@startuml
+header
+Deployment diagram generated with plantuml.com to github.com/omahoito. CC-BY-4.0 City of Espoo 2017. To change the picture, make a pull request with changes to deployment.md and README.md.
+endheader
+
+cloud internet1
+cloud internet2
+cloud firewall [ 
+Firewall 1 and 2
+]
+interface DMZ
+cloud loadbalancer1 [ 
+Loadbalancer 1 and 2
+]
+interface VLAN1 [
+VLAN 1 and 2 
+]
+node nodeas1 [
+Application server 
+2+n
+----
+CentOS 7, Ubuntu 16 or Debian 8
+....
+32G+ RAM
+4+ CPU
+250G+ SSD storage
+2 NIC
+]
+database database1 [
+Database Server 
+2+n
+----
+CentOS 7, Ubuntu 16 or Debian 8
+....
+32G+ RAM
+4+ CPU
+SAN 1T+ Storage
+2 NIC
+]
+database logging1 [
+Logging Server 
+2+n
+----
+CentOS 7, Ubuntu 16 or Debian 8
+....
+16G+ RAM
+4+ CPU
+SAN 1T+ Storage
+2 NIC
+]
+node nodeintegration1 [
+Integration Security Server
+----
+CentOS 7 or Ubuntu 14
+1+n
+....
+16G+ RAM
+4+ CPU
+250G+ SSD storage
+2 NIC
+]
+node nodeintegration2 [
+Integration Server
+2+n
+----
+CentOS 7, Ubuntu 16 or Debian 8
+....
+16G+ RAM
+4+ CPU
+250G+ SSD storage
+2 NIC
+]
+node nodeproxy [
+Proxy Server
+2+n
+----
+CentOS 7, Ubuntu 16 or Debian 8
+....
+16G+ RAM
+4+ CPU
+250G+ SSD storage
+4 NIC
+]
+node nodeci [
+Continuous Integration Server
+----
+CentOS 7, Ubuntu 16 or Debian 8
+....
+32G+ RAM
+8+ CPU
+250G+ SSD storage
+4 NIC
+]
+node nodevm [
+Temporary Server 
+0+n
+----
+CentOS 7, Ubuntu 16 or Debian 8
+....
+8G+ RAM
+2+ CPU
+100G+ storage
+1 virtual NIC
+]
+database NAS
+database SAN1
+database SAN2
+database Backup
+
+internet1 -- firewall
+internet2 -- firewall
+firewall -- DMZ 
+firewall -- DMZ 
+
+DMZ -- loadbalancer1 
+DMZ -- loadbalancer1 
+
+
+DMZ -- nodeci
+DMZ -- nodeci
+firewall -- nodeproxy
+loadbalancer1 -- nodeproxy
+firewall -- nodeproxy
+loadbalancer1 -- nodeproxy
+DMZ -- nodeintegration1
+DMZ -- nodeintegration1
+nodeintegration1 ~~ logging1
+nodeproxy ~~ logging1
+nodeci ~~ logging1
+loadbalancer1 -- VLAN1
+loadbalancer1 -- VLAN1
+database1 -- VLAN1
+database1 -- VLAN1
+database1 -- SAN1
+nodeci ~~ database1
+logging1 -- SAN1
+database1 -- SAN2
+logging1 -- SAN2
+nodeintegration2 -- VLAN1
+nodeintegration2 -- VLAN1
+nodeintegration2 ~~ logging1
+nodeci ~~ nodeintegration2
+logging1 -- VLAN1
+logging1 -- VLAN1
+nodeas1 ~~ logging1
+nodeas1 -- VLAN1
+nodeas1 -- VLAN1
+nodeci ~~ nodeas1
+Backup .. VLAN1
+Backup .. DMZ
+nodeci ~~ Backup
+nodevm .. VLAN1
+nodevm .. DMZ
+nodevm ~~ logging1
+nodeci ~~ nodevm
+NAS .. VLAN1
+@enduml
