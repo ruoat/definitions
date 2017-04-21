@@ -5,19 +5,19 @@ This repository contains ODA architecture and UI definitions.
 ## Architecture
 
 The architecture is guided by the following principles:
-* Modular API first -system
+* Modular API first system
 * Composed of micro services
 * Simple and minimalistic user experience
 * User centric
 * Multilingual
 * Agile development
-* System design
+* Systems design
 * Small is beautiful
 * Open data
 * Open source
 * Open API
 * Open standards
-* My Data awareness
+* My Data.
 
 Further reading (in Finnish): [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaatteet.md)
 
