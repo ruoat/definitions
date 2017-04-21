@@ -21,12 +21,18 @@ The architecture is guided by the following principles:
 
 Further reading (in Finnish): [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaatteet.md)
 
+### Information architecture
+
 Information is stored primarily as FHIR resources.
 Data model is described in [ODA RFC repository](https://github.com/omahoito/rfc/blob/master/README.md).
 
-* [Codes and code systems](codesets.md)
-* [Integrations](integrations.md)
-* [Deployment architecture](deployment.md)
+ODA uses standardized codesets whenever possible. See full [codes and code systems listing](codesets.md).
+
+### Integrations
+See [Integrations](integrations.md)
+
+### Deployment architecture
+See [Deployment architecture](deployment.md)
 
 ## Visual design
 
