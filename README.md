@@ -31,6 +31,9 @@ ODA uses standardized codesets whenever possible. See full [codes and code syste
 ### Integrations
 See [Integrations](integrations.md)
 
+### Functional architecture
+Some of the module interactions are described with [sequence diagrams](sequence-diagrams/).
+
 ### Deployment architecture
 See [Deployment architecture](deployment.md)
 
