@@ -6,7 +6,7 @@ This repository contains ODA architecture and UI definitions.
 
 The architecture is guided by the following principles:
 * Modular API first system
-* Composed of micro services
+* Composed of microservices
 * Simple and minimalistic user experience
 * User centric
 * Multilingual
@@ -43,6 +43,19 @@ See [Integrations](integrations.md)
 
 ### Functional architecture
 Some of the module interactions are described with [sequence diagrams](sequence-diagrams/).
+
+### Key technologies
+
+Current microservices are implemented as standalone Java 8 applications 
+with [Spring Boot](https://projects.spring.io/spring-boot/).
+[PostgreSQL 9.6](https://www.postgresql.org/) is used as database.
+
+Web frontend is implemented as an EcmaScript 6/HTML 5 single page application.
+Key libraries include 
+* [react](https://facebook.github.io/react/) UI-component library
+* [react-router v4](https://github.com/ReactTraining/react-router/) front-end routing and
+* [redux](http://redux.js.org/) for application state handling.
+
 
 ### Deployment architecture
 See [Deployment architecture](deployment.md)
