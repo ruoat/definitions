@@ -4,10 +4,26 @@ This repository contains ODA architecture and UI definitions.
 
 ## Architecture
 
+The architecture is guided by the following principles:
+* Modular API first -system
+* Composed of micro services
+* Simple and minimalistic user experience
+* User centric
+* Multilingual
+* Agile development
+* System design
+* Small is beautiful
+* Open data
+* Open source
+* Open API
+* Open standards
+* My Data awareness
+
+Further reading (in Finnish): [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaatteet.md)
+
 Information is stored primarily as FHIR resources.
 Data model is described in [ODA RFC repository](https://github.com/omahoito/rfc/blob/master/README.md).
 
-* [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaatteet.md)
 * [Codes and code systems](codesets.md)
 * [Integrations](integrations.md)
 * [Deployment architecture](deployment.md)
