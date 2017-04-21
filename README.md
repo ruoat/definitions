@@ -17,8 +17,9 @@ Data model is described in [ODA RFC repository](https://github.com/omahoito/rfc/
 * [Wireframes](sketch-wireframes/)
 * [Style guide](style-guide/)
 
-## Tools and code conventions
+## Tools and conventions
 
+* Wireframes are produced with [Sketch](https://www.sketchapp.com/).
 * [Working with diagrams](diagrams.md)
 * [Code Conventions](codeconventions.md)
 * [Working with FHIR profiles](https://github.com/omahoito/rfc#tools-for-editing-profiles)
