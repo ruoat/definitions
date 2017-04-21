@@ -21,6 +21,16 @@ The architecture is guided by the following principles:
 
 Further reading (in Finnish): [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaatteet.md)
 
+### Modules
+| Module | Description |
+| ------ | ------- |
+| oda-backend | Provides static resources, API gateway and integration to Suomi.fi SSO |
+| oda-fhir-service | Provides FHIR resource APIs on top of oda-phr |
+| oda-logging-service | Provides centralized logging server and a client library |
+| [oda-phr](https://github.com/omahoito/oda-phr) | Personal health record database |
+| oda-service-common | Shared server side Java library |
+| oda-web-front | Web Browser UI that is served from oda-backend |
+
 ### Information architecture
 
 Information is stored primarily as FHIR resources.
