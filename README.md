@@ -22,14 +22,35 @@ The architecture is guided by the following principles:
 Further reading (in Finnish): [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaatteet.md)
 
 ### Modules
-| Module | Description |
-| ------ | ------- |
-| oda-backend | Provides static resources, API gateway and integration to Suomi.fi SSO |
-| oda-fhir-service | Provides FHIR resource APIs on top of oda-phr |
-| oda-logging-service | Provides centralized logging server and a client library |
-| [oda-phr](https://github.com/omahoito/oda-phr) | Personal health record database |
-| oda-service-common | Shared server side Java library |
-| oda-web-front | Web Browser UI that is served from oda-backend |
+
+Currently implemented modules are listed below. See their repositories for more
+detailed software achitecture description.
+
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/modules.plantuml?1) 
+<!-- To invalidate caches change the counter in the url above, i.e. modules.plantuml?13 -> modules.plantuml?14 -->
+
+#### [oda-backend](https://github.com/omahoito/oda-backend) 
+Backend provides static resources, API gateway and integration to Suomi.fi 
+SSO. Backend is the contact point for web browsers and handles security aspects
+such as CSRF protection.
+
+#### [oda-fhir-service](https://github.com/omahoito/oda-fhir-service) 
+
+FHIR Service Provides FHIR resource APIs on top of oda-phr and external systems 
+that provide FHIR APIs.
+
+#### [oda-logging-service](https://github.com/omahoito/oda-logging-service) 
+Logging Service provides a centralized logging server and a client library that
+handles server communication when built into other services.
+  
+#### [oda-phr](https://github.com/omahoito/oda-phr) 
+Personal health record database. 
+ 
+#### [oda-service-common](https://github.com/omahoito/oda-service-common) 
+Shared server side Java library.
+ 
+#### [oda-web-front](https://github.com/omahoito/oda-web-front) 
+Web Browser UI that is served from oda-backend. 
 
 ### Information architecture
 

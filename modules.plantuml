@@ -1,0 +1,45 @@
+@startuml
+header
+Module diagram generated with plantuml.com to github.com/omahoito/definitions. \
+CC-BY-4.0 City of Espoo 2017. \
+To change the picture, make a pull request with changes to modules.plantuml and README.md.
+endheader
+
+agent browser
+folder "ODA 2" {
+    component "oda-web-front" as owf
+    component "oda-backend" as ob
+    component "oda-fhir-service" as ofs
+    component "oda-logging-service" as ols
+    component "oda-phr" as op
+    database "PostgreSQL" as postgres
+
+    browser --> owf
+    owf --> ob
+    ob --> ofs
+    ob --> ols
+    ofs --> op
+    ofs --> ols
+    op --> ols
+    op --> postgres
+}
+
+folder "External systems" as ext {
+    component "Suomi.fi" as suomifi
+    component AVPH
+}
+
+ob --> suomifi
+ofs --> AVPH
+
+folder "ODA 1" {
+    component "Questionnaire\ndatabase" as VKT
+    component "ODA 1 API gateway" as ODA1
+    component "EBMeDS\nDecision support system" as EBMeDS
+    ODA1 --> EBMeDS
+}
+
+VKT --> ob
+ofs --> ODA1
+
+@enduml
