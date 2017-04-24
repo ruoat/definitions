@@ -3,6 +3,18 @@
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/masterdata.plantuml?1) 
 <!-- This generates a picture based on masterdata.plantuml. To change the counter in the url above, i.e. masterdata.plantuml?13 -> masterdata.plantuml?14 -->
 
+| System | Description | Authentication |
+| ------ | ----------- | -------------- |
+| Suomi.fi identification | SAML 2.0 SSO. https://esuomi.fi/palveluntarjoajille/tunnistaminen/ | Public key |
+| Suomi.fi e-Authorizations | Enables users to act on behalf of other persons in digital services, and authorize others to act on their behalf. https://esuomi.fi/palveluntarjoajille/asiointivaltuudet/  | X-Road or OAuth 2 |
+| Kanta | Electronic health records archive. http://www.kanta.fi/web/ammattilaisille/tietotekniikan-ja-yhteyksien-toteuttajille | OAuth 2 |
+| My kanta | http://www.kanta.fi/web/ammattilaisille/tyokalut-kehittajille | OAuth 2 or SSL client cert |
+| ODA 1 | Provides questionnaires and decision support | (firewall) |
+| Code server | National code server https://koodistopalvelu.kanta.fi/codeserver/ | Open data |
+| Terhikki | Practitioner registry | ? |
+| VTJ | Provides person information of citizen | X-Road or SSL client certificate |
+| Appointment reservations | E.g. AVPH that provides FHIR API for booking appointments | (firewall) |
+| Minimum context management | http://www.hl7.fi/hl7-rajapintakartta/minimikontekstinhallinnan-maarittely/  | ? | 
 
 ## Preparing for third party downtime
 
