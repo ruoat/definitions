@@ -19,6 +19,5 @@
 ### Careplan comments and notifications
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/ODA-Careplan-Comment.plantuml?1) 
 
-
-
-
+### Appointment booking
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/appointment-booking.plantuml?1) 
