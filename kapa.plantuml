@@ -1,0 +1,33 @@
+@startuml
+header
+KaPa architecture diagram generated with plantuml.com to github.com/omahoito/definitions. \
+CC-BY-4.0 City of Espoo 2017. \
+To change the picture, make a pull request with changes to kapa.plantuml and README.md.
+endheader
+
+actor Browser
+
+folder "External Services" {
+    component KaPa
+}
+
+folder ODA {
+    folder "ODA DMZ" {
+        component "API Gateway" as gw
+        component "oda-esb" as esb
+        component "Security Server" as sec
+    }
+    folder "ODA VLAN" {
+        component "ODA services" as x
+    }
+}
+
+Browser --> gw
+gw --> x
+
+x --> esb
+esb <--> sec
+sec <--> KaPa
+esb --> gw
+
+@enduml
