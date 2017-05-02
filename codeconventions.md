@@ -85,5 +85,4 @@ ODA source code is developed on various platforms and editors. Therefore common 
 ## Misc
 
 Master the conventions, but also keep in mind the crucial non-code aspects of software development. While bad code has sometimes contributed to project failures, in most cases the problems have run deeper.
-
-![hint](https://twitter.com/practicingdev/status/811956403745210368)
+https://twitter.com/practicingdev/status/811956403745210368
