@@ -2,7 +2,8 @@
 Käytännöt kehittyvät jatkuvasti. Sääntöjä ei tule ohittaa millään tekosyyllä, vaan tarpeen tullen niihin tulee ehdottaa muutoksia. Kehitykseen osallistuvien tulee tuntea olevansa oikeutettu joko ehdottamaan muutosta tai tekemään muutos sen mukaan mihin heidän rooli organisaatiossa sallii.
 
 Arkkitehtuuriperiaatteita käytetään pohjana suunnittelupäätöksten tekemisen kun kehitetään uusia verkkopalveluita. Arkkitehtuuriperiaatteet on laadittu mahdollistamaan hajautettu palvelukehitys avoimen lähdekoodin ympäristössä, hajautetussa pilotoinnissa ja Lean-sovelluksehityksessä.
-Modulaariset, vaihdettavat rakennuspalikat
+
+## Modulaariset, vaihdettavat rakennuspalikat
 Suosimme modulaarisuutta mahdollistaaksemme hajautetun, standardipohjaisen ja yhteentoimivan systeemilähtöisen palvelumuotoilun. Ratkaisumme hyödyntää avoimen lähdekoodin komponentteja, kirjastoja ja olemassaolevia sovelluksia. Muotoilu tulee pitää modulaarisena niin että yksittäiset toiminnallisuudet voidaan vaihtaa toisiin vastaaviin, riippuen vaikkapa teknologian elinkaarien vaiheista. Näin mahdollistetaan palveluratkaisut jotka on rakennettu muuttumaan (built to change) ennemmin kuin kestämään (built to last). http://en.wikipedia.org/wiki/Separation_of_concerns
 
 ## Modulaarinen API ensin -sovellus
@@ -50,5 +51,3 @@ Avoimet standardit ovat vapaasti kaikkien saatavissa. Suljettujen, toimittajakoh
 
 ## My Data -tietoisuus
 Otamme huomioon yksilön oikeudet saada vapaasti käyttöönsä itseään koskevat tiedot sekä tiedot, jotka on luotu hänen omistuksessaan olevin välinein. Kunnioitamme kaikkia oikeuksia jotka koskevat datan suojausta ja käyttäjien oikeuksia ja toissijaisesti kaupallisia, tieteellisiä ja julkishallinnon oikeuksia henkilökohtaiseen dataan. Avoimen datan tavoin  henkilökohtaisen datan (Mydata) tulee olla käyttäjän saatavilla teknisesti  mahdollisimman helposti. Se, että käyttäjät saavat hallinnoida omaa dataansa, luo luottamusta käyttäjien ja organisaatioiden välille. Käyttäjäkokemus joka mahdollistaa tietoisen datan avaamisen organisaatioille on toivottavampi lähestymistapa kuin monimutkaiset tai epämääräiset juridiset kuvaukset siitä mitä organisaatio voi käyttäjän datalla tehdä.
-Mikropalveluihin perustuva palveluratkaisu
-Mikropalvelu on palvelu jota voi kehittää itsenäisesti riippumatta muista mikropalveluista. Se toteuttaa yhden vastuullaan olevan toiminnallisen kokonaisuuden. Palvelu tarjoaa hyvin määritellyn rajapinnan, ja palvelu voidaan helposti korvata saman rajapinnan toteuttavalla uudella palvelulla. Mikropalveluilla rakennamme korvattavissa olevia kokonaisuuksia, jolloin riskienhallinta helpottuu ja ratkaisun elinkaari pitenee. Mikropalvelut mahdollistavat standardoidun/vakioidun kehittämismallin rajapinnoille, jotka halutaan liittää rinnakkaisjärjestelmiin (API Discovery, Watchdog/recovery etc). Mikropalvelut mahdollistaa tarkan kapasiteetin resurssoinnin kun pullonkaulat on helpompi tunnistaa, skaalata ja ajaa tarkoituksenmukaisissa paikoissa sovellusarkkitehtuurin kannalta.
