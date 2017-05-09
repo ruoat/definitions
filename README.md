@@ -105,3 +105,7 @@ See [Deployment architecture](deployment.md)
 * [Working with diagrams](diagrams.md)
 * [Code Conventions](codeconventions.md)
 * [Working with FHIR profiles](https://github.com/omahoito/rfc#tools-for-editing-profiles)
+
+## Glossary
+
+See [glossary.md](glossary.md)
