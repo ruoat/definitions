@@ -9,6 +9,3 @@ script:
 
 notifications:
   email: false
-
-  
-  https://github.com/omahoito/definitions/pull/35
