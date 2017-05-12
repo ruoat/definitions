@@ -1,0 +1,14 @@
+
+language: python
+
+before_script:
+  - chmod +x ./definitions-diagrams/*.sh
+
+script:
+  - ./definitions-diagrams/diagramchecker.sh
+
+notifications:
+  email: false
+
+  
+  https://github.com/omahoito/definitions/pull/35

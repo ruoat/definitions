@@ -5,9 +5,16 @@
 
 set -eu
 
+cd $(dirname $0) # be in root folder
+
 QUERYFILE="README.md"
+QUERYDIR="sequence-diagrams"
+
+cd $QUERYDIR
 
 RETVAL=0
+
+echo $(pwd)
 
 for i in *; do
   if [[ $i =~ (plantuml|puml) ]]; then
