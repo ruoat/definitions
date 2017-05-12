@@ -2,10 +2,10 @@
 language: python
 
 before_script:
-  - chmod +x ./definitions-diagrams/*.sh
+  - chmod +x ./sequence-diagrams/*.sh
 
 script:
-  - ./definitions-diagrams/diagramchecker.sh
+  - ./sequence-diagrams/diagramchecker.sh
 
 notifications:
   email: false
