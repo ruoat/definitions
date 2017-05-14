@@ -37,3 +37,6 @@ Story: User needs a proposed time.
 * Slots that are freeBusyType = BUSY-TENTATIVE but too old, ie. more than 5 minutes, or freeBusyType = BUSY but not status = booked, are written as freeBusyType = FREE.
 
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/appointment-booking.plantuml?1) 
+
+### Send Careplan to service request list
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/ODA_Careplan-send.plantuml?1) 
