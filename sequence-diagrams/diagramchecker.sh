@@ -8,11 +8,9 @@ set -eu
 QUERYFILE="README.md"
 QUERYDIR="sequence-diagrams"
 
-cd $QUERYDIR # assumption: scripts starts in root folder
+cd $QUERYDIR # assumption: script starts in root folder
 
 RETVAL=0
-
-echo $(pwd)
 
 for i in *; do
   if [[ $i =~ (plantuml|puml)$ ]]; then
