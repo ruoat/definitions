@@ -38,5 +38,9 @@ Story: User needs a proposed time.
 
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/appointment-booking.plantuml?1) 
 
+### Directing customers to services
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/service-sequence.plantuml?1) 
+
 ### Send Careplan to service request list
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/ODA_Careplan-send.plantuml?1) 
+
