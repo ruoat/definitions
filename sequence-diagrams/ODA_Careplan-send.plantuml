@@ -1,0 +1,32 @@
+@startuml
+actor useragent
+participant ODA_FHIR_API
+participant ODA_PHR
+participant SERVICE_REGISTRY
+participant ODA_GEOCODER
+
+
+useragent -> ODA_FHIR_API : POST [oda-fhir-base]/CarePlan/{id}/$send
+
+ODA_FHIR_API <-> ODA_GEOCODER : Get location based on user's home address.
+
+ODA_FHIR_API <-> SERVICE_REGISTRY : getNearestOrganization(servicecode, geolocation)
+ODA_FHIR_API -> ODA_PHR : GET CareTeam/$searchbyorganizationOID
+ODA_PHR --> ODA_FHIR_API : HTTP 200 OK [CareTeam]
+ODA_FHIR_API --> useragent : HTTP 200 OK [CarePlan with updated CareTeam]
+useragent -> useragent : Is organization OK?
+
+group Case: Organization not ok
+useragent -> ODA_FHIR_API : GET CareTeam/$searchbylocation
+ODA_FHIR_API <-> SERVICE_REGISTRY : getNearbyOrganizations(servicecode, geolocation)
+ODA_FHIR_API -> ODA_PHR : GET CareTeam/$searchbyorganizationOIDList
+ODA_PHR --> ODA_FHIR_API : HTTP 200 OK [Bundle with CareTeam resources]
+ODA_FHIR_API --> useragent : HTTP 200 OK [Bundle with CareTeam resources]
+useragent -> useragent : Select Organization
+end
+useragent -> useragent : Update CareTeam link to CarePlan
+useragent -> ODA_FHIR_API : POST CarePlan/{id}
+ODA_FHIR_API -> ODA_FHIR_API : Check is the Organization allowed
+ODA_FHIR_API -> ODA_PHR : POST CarePlan/{id}
+
+@enduml
