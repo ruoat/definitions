@@ -1,0 +1,70 @@
+@startuml
+
+header
+Deployment architecture diagram generated with plantuml.com to github.com/omahoito/definitions. \
+CC-BY-4.0 City of Espoo 2017. \
+To change the picture, make a pull request with changes to deployment.plantuml and deployment.md.
+endheader
+
+footer
+Arrow heads point where the initial TCP SYN package is send to. \
+Dashed lines indicate future or speculative connection requirements.
+endfooter
+
+actor Customer
+actor Practitioner
+agent "KaPa Services" as ks
+agent "3rd Party Applications" as apps
+
+cloud Internet as public
+cloud LAN
+cloud Internet as kapa
+
+Customer --> public
+Practitioner --> LAN
+ks <--> kapa
+apps ..> public
+
+folder "Local services" {
+    component "Appointment Service" as appointments
+    component "Minimum Context Server" as mctx
+    component EHR
+}
+
+folder ODA {
+    folder "ODA DMZ" {
+        component "X-Road Security Server" as sec
+        component "oda-esb" as esb
+        component "API Gateway" as gw
+        component "oda-idp" as idp
+
+    }
+    folder "ODA application VLAN" {
+        component "ODA microservices" as x
+    }
+
+    folder "ODA logging VLAN" {
+        component "ODA Logging Service" as logging
+        database Log
+        logging --> Log
+    }
+}
+
+public --> gw
+LAN --> gw
+
+sec <--> esb
+esb --> appointments
+esb ..> EHR
+esb --> logging
+
+gw --> idp
+idp ..> mctx
+
+kapa <--> sec
+
+gw --> x
+x --> esb
+x --> logging
+
+@enduml
