@@ -1,22 +1,22 @@
 @startuml
 header
-Deployment diagram generated with plantuml.com to github.com/omahoito. CC-BY-4.0 City of Espoo 2017. To change the picture, make a pull request with changes to deployment.md and README.md.
+Server deployment diagram generated with plantuml.com to github.com/omahoito. CC-BY-4.0 City of Espoo 2017. To change the picture, make a pull request with changes to servers.plantuml and deployment.md.
 endheader
 
 cloud internet1
 cloud internet2
-cloud firewall [ 
+cloud firewall [
 Firewall 1 and 2
 ]
 interface DMZ
-cloud loadbalancer1 [ 
+cloud loadbalancer1 [
 Loadbalancer 1 and 2
 ]
 interface VLAN1 [
-VLAN 1 and 2 
+VLAN 1 and 2
 ]
 node nodeas1 [
-Application server 
+Application server
 2+n
 ----
 CentOS 7, Ubuntu 16 or Debian 8
@@ -27,7 +27,7 @@ CentOS 7, Ubuntu 16 or Debian 8
 2 NIC
 ]
 database database1 [
-Database Server 
+Database Server
 2+n
 ----
 CentOS 7, Ubuntu 16 or Debian 8
@@ -38,7 +38,7 @@ SAN 1T+ Storage
 2 NIC
 ]
 database logging1 [
-Logging Server 
+Logging Server
 2+n
 ----
 CentOS 7, Ubuntu 16 or Debian 8
@@ -92,7 +92,7 @@ CentOS 7, Ubuntu 16 or Debian 8
 4 NIC
 ]
 node nodevm [
-Temporary Server 
+Temporary Server
 0+n
 ----
 CentOS 7, Ubuntu 16 or Debian 8
@@ -109,11 +109,11 @@ database Backup
 
 internet1 -- firewall
 internet2 -- firewall
-firewall -- DMZ 
-firewall -- DMZ 
+firewall -- DMZ
+firewall -- DMZ
 
-DMZ -- loadbalancer1 
-DMZ -- loadbalancer1 
+DMZ -- loadbalancer1
+DMZ -- loadbalancer1
 
 
 DMZ -- nodeci

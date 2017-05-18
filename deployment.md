@@ -1,7 +1,7 @@
 ## Deployment architecture
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.plantuml?1) 
-<!-- This generates a picture based on deployment.md. To change the counter in the url above, i.e. deployment.plantuml?13 -> deployment.plantuml?14 -->
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/servers.plantuml?1) 
+<!-- This generates a picture based on deployment.md. To change the counter in the url above, i.e. servers.plantuml?13 -> servers.plantuml?14 -->
 
 ### Peruskokoonpanot
 
@@ -42,7 +42,7 @@
 
 ### Asiantuntijapalvelut
 - Sysadmin palvelut 24/7
-- Yll‰pitoasiantuntija t&m
+- Yll√§pitoasiantuntija t&m
 - Konesaliasiantuntija/arkkitehti t&m
 
 ### Optiona
