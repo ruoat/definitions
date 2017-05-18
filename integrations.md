@@ -24,6 +24,21 @@ KaPa services are provided and consumed via
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/kapa.plantuml?1) 
 <!-- To invalidate caches change the counter in the url above, i.e. kapa.plantuml?13 -> kapa.plantuml?14 -->
 
+The proposed services that could be published to KaPa are:
+
+* CarePlan Service
+  * Get service requests
+  * Get care plan
+* Observation Service
+  * Get observations
+  * Create observation
+* Communication Service
+  * Get notifications
+  * Get comments
+
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/kapa-services.plantuml?-1) 
+<!-- To invalidate caches change the counter in the url above, i.e. kapa-services.plantuml?13 -> kapa-services.plantuml?14 -->
+
 ## Preparing for third party downtime
 
 Downtime could be due to any planned or unplanned incident that prevents ODA 
