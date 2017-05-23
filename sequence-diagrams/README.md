@@ -21,3 +21,7 @@
 
 ### Send Careplan to service request list
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/ODA_Careplan-send.plantuml?1) 
+
+### Appointment booking
+
+See https://github.com/omahoito/oda-fhir-service/blob/master/docs/appointment-booking.md
