@@ -71,16 +71,13 @@ ODA uses standardized codesets whenever possible. See full [codes and code syste
 ### Integrations
 See [Integrations](integrations.md) for details.
 
-#### KaPa integration
-
-KaPa services are provided and consumed via 
-[oda-esb](https://github.com/omahoito/oda-esb) and an X-Road Security Server.
-
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/kapa.plantuml?1) 
-<!-- To invalidate caches change the counter in the url above, i.e. kapa.plantuml?13 -> kapa.plantuml?14 -->
-
 ### Functional architecture
-Some of the module interactions are described with [sequence diagrams](sequence-diagrams/).
+
+Some of the module interactions are described with 
+[sequence diagrams](sequence-diagrams/).
+
+How a service provider is selected for a customer is described in 
+[customer-to-service.md](customer-to-service.md).
 
 ### Key technologies
 
