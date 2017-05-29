@@ -1,0 +1,58 @@
+@startuml
+header
+Service concept diagram generated with plantuml.com to github.com/omahoito/definitions. \
+CC-BY-4.0 City of Espoo 2017. \
+To change the picture, make a pull request with changes to customer-to-service.md.
+endheader
+
+class "Service availability" {
+    Facility
+    Slot
+}
+
+class Customer {
+    Geolocation
+    Address
+    Contracts
+}
+
+class "Entitlement to service" {
+    Service code
+    Service availability
+}
+
+class "Service code"
+
+class "Unit code"
+
+class Contract {
+    Service code
+    Units
+}
+
+class Facility {
+    Geolocation
+    Address
+    Entrance door
+}
+
+class "Service request list"
+
+"Service availability" "*" -- "1" "Service code"
+"Service availability" "*" -- "1" "Unit code"
+"Service availability" "*" -- "1" Facility
+
+Facility -- "1" "Service request list"
+
+"Unit code" "1..*" --o "*" Contract
+"Service code" "1..*" --o "*" Contract
+"Service code" -- "Unit code"
+
+Customer "1" -- "*" "Entitlement to service"
+
+Customer -- Contract
+
+"Entitlement to service"  "*" o-- "1" "Service code"
+"Entitlement to service" "*" o-- "1" "Service availability"
+
+@enduml
