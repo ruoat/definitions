@@ -26,7 +26,7 @@ Further reading (in Finnish): [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaattee
 Currently implemented modules are listed below. See their repositories for more
 detailed software achitecture description.
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/modules.plantuml?1) 
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/modules.plantuml?2) 
 <!-- To invalidate caches change the counter in the url above, i.e. modules.plantuml?13 -> modules.plantuml?14 -->
 
 #### [oda-backend](https://github.com/omahoito/oda-backend) 
@@ -43,6 +43,10 @@ external XML interfaces to FHIR/JSON interfaces for internal services.
 
 FHIR Service Provides FHIR resource APIs on top of oda-phr and external systems 
 that provide FHIR APIs.
+
+#### [oda-fhir-service-common](https://github.com/omahoito/oda-fhir-service-common) 
+
+Java library for providing FHIR services.
 
 #### [oda-logging-service](https://github.com/omahoito/oda-logging-service) 
 Logging Service provides a centralized logging server and a client library that

@@ -13,6 +13,7 @@ folder "ODA 2" {
     component "oda-logging-service" as ols
     component "oda-phr" as op
     database "PostgreSQL" as postgres
+    database "MongoDB" as mongo
 
     browser --> owf
     owf --> ob
@@ -22,6 +23,7 @@ folder "ODA 2" {
     ofs --> ols
     op --> ols
     op --> postgres
+    ols --> mongo
 }
 
 folder "External systems" as ext {
