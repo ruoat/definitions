@@ -10,7 +10,7 @@ an appointment service API URL, contact information, geolocation and area of
 responsibility.  It can also specify that only online consultation via ODA is 
 provided.
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/service-concepts.plantuml?0)
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/service-sequence.plantuml?0)
  
 Customer's user profile includes information about geolocation and home 
 address. The location data is collected from suomi.fi login (VRK data), device 
@@ -39,4 +39,4 @@ available, facility's phone number will be displayed.
 A professional receives information from a reserved slot, message or answers 
 the phone. Messages are stored in facility's service request queue in ODA.
  
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/service-sequence.plantuml?0)
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/service-concepts.plantuml?0)
