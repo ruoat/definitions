@@ -34,6 +34,9 @@ Story: User needs a proposed time.
 * EHR writes slot as freeBusyType = BUSY-TENTATIVE (or freeBusyType = BUSY if not supported by target system)
 * User confirms and Appointment status = booked is written.
 * EHR writes slot as freeBusyType = BUSY
+* If BUSY-TENTATIVE is not supported by target system, ODA must remember if more than one time was proposed and cancel the ones not selected by the user.
+* If cancelling Appointments is not supported by target system, ODA can receive notifications if slots are booked in the EHR to maximise keeping the status up-to-date. 
+* If cancelling Appointments is not supported by target system, there must be error hadling in the UI when user selects a proposed time that has already been booked by someone else.
 * Slots that are freeBusyType = BUSY-TENTATIVE but too old, ie. more than 5 minutes, or freeBusyType = BUSY but not status = booked, are written as freeBusyType = FREE.
 
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/appointment-booking.plantuml?1) 
