@@ -10,8 +10,8 @@
 * VRK henkilöiden kotiosoiterekisteri
 
 ## Puolesta-asiointi
-Kansalainen kirjautuu Suomi.fi palveluun ja saa henkilötunnuksen. Sitten kysellään puolesta asioinnin oikeudet, ja saadaan näisen henkilötunnukset.
-Ammattilainen kirjautuu toimikortillaan, ja sieltä saadaan ammattilaisen henkilötunnus.
+Kansalainen kirjautuu Suomi.fi palveluun ja saa henkilötunnuksen. Tämän jälkeen kysellään valtuutukset ja puolesta-asioinnin oikeudet, ja saadaan näiden henkilötunnukset.
+Ammattilainen kirjautuu toimikortillaan, josta saadaan ammattilaisen henkilötunnus.
 
 ## Ammattilaisen metatiedot
 AP: Selvitetään tekninen tapa lukea kirjautumisesta Terhikki-rekisterinumero. Jos tämmöistä ei ole, ammattilaisten henkilötunnuksista ja niihin liittyvistä Terhikki-rekisterinumeroista on luotava käyttäjärekisteri.
