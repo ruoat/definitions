@@ -19,9 +19,11 @@
 ### Careplan comments and notifications
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/ODA-Careplan-Comment.plantuml?1)  
 
+### Directing customers to services
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/service-sequence.plantuml?1) 
+
 ### Send Careplan to service request list
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/sequence-diagrams/ODA_Careplan-send.plantuml?1) 
 
 ### Appointment booking
-
 See https://github.com/omahoito/oda-fhir-service/blob/master/docs/appointment-booking.md

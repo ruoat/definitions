@@ -1,0 +1,28 @@
+@startuml
+header
+Service sequence diagram generated with plantuml.com to github.com/omahoito/definitions. \
+CC-BY-4.0 City of Espoo 2017. \
+To change the picture, make a pull request with changes to README.md.
+endheader
+
+participant "ODA 2 client" as oda2
+participant "ODA 1" as oda1
+participant "Appointment booking service" as booking
+participant "Service registry" as registry
+participant Geocoder
+
+booking -> registry : registerAPI(url, contractIDs, serviceCodes, geolocation)
+oda2 -> oda1 : QuestionnaireResponse/$check-symptoms
+oda1 -> oda2 : Suggested service codes
+oda2 -> oda2 : Or a planned event (service code)
+
+oda2 <-> Geocoder : Resolve address geolocation
+
+oda2 <-> registry : resolveURL(serviceCode, contractIDs, geolocation)
+oda2 -> booking : bookAppointment(serviceCode)\n\
+ (see more detailed description at github.com/omahoito/definitions)
+
+oda2 -> oda2 : Display appointment,\n\
+ phone number or message form
+
+@enduml

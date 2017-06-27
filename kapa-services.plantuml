@@ -1,0 +1,29 @@
+@startuml
+footer
+KaPa service diagram generated with plantuml.com to github.com/omahoito/definitions. \
+CC-BY-4.0 City of Espoo 2017. \
+To change the picture, make a pull request with changes to kapa-services.plantuml and integrations.md.
+endfooter
+
+component "CarePlan Service" as CarePlan
+interface "Get service requests" as servicerequests
+interface "Get care plan" as careplan
+
+CarePlan -up- servicerequests
+CarePlan -up- careplan
+
+component "Observation Service" as Observation
+interface "Get observations" as getobs
+interface "Create observation" as createobs
+
+Observation -up- getobs
+Observation -up- createobs
+
+component "Communication Service" as Communication
+interface "Get notifications" as notifications
+interface "Get comments" as comments
+
+Communication -up- notifications
+Communication -up- comments
+
+@enduml

@@ -26,7 +26,7 @@ Further reading (in Finnish): [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaattee
 Currently implemented modules are listed below. See their repositories for more
 detailed software achitecture description.
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/modules.plantuml?1) 
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/modules.plantuml?2) 
 <!-- To invalidate caches change the counter in the url above, i.e. modules.plantuml?13 -> modules.plantuml?14 -->
 
 #### [oda-backend](https://github.com/omahoito/oda-backend) 
@@ -43,6 +43,10 @@ external XML interfaces to FHIR/JSON interfaces for internal services.
 
 FHIR Service Provides FHIR resource APIs on top of oda-phr and external systems 
 that provide FHIR APIs.
+
+#### [oda-fhir-service-common](https://github.com/omahoito/oda-fhir-service-common) 
+
+Java library for providing FHIR services.
 
 #### [oda-logging-service](https://github.com/omahoito/oda-logging-service) 
 Logging Service provides a centralized logging server and a client library that
@@ -64,19 +68,19 @@ Data model is described in [ODA RFC repository](https://github.com/omahoito/rfc/
 
 ODA uses standardized codesets whenever possible. See full [codes and code systems listing](codesets.md).
 
+### Roles and authorizations
+Documented (in Finnish): [Roolit ja valtuutukset](roolit-ja-valtuutukset.md)
+
 ### Integrations
 See [Integrations](integrations.md) for details.
 
-#### KaPa integration
-
-KaPa services are provided and consumed via 
-[oda-esb](https://github.com/omahoito/oda-esb) and an X-Road Security Server.
-
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/kapa.plantuml?1) 
-<!-- To invalidate caches change the counter in the url above, i.e. kapa.plantuml?13 -> kapa.plantuml?14 -->
-
 ### Functional architecture
-Some of the module interactions are described with [sequence diagrams](sequence-diagrams/).
+
+Some of the module interactions are described with 
+[sequence diagrams](sequence-diagrams/).
+
+How a service provider is selected for a customer is described in 
+[customer-to-service.md](customer-to-service.md).
 
 ### Key technologies
 
