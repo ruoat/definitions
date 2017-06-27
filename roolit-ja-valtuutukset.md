@@ -27,7 +27,7 @@ Käyttäjä ohjataan palveluun VRK henkilöiden kotiosoiterekisterin perusteella
 Käyttäjällä voi myös olla profiilin metatietoja jossa on väliaikaisia sijainteja, osotteita, preferoituja tuottajaorganisaatioita tai preferoituja ammattilaisia.
 
 ## Luvitus dataan
-Luvitus dataan perustuu hoitosuhteeseen. Dokumenteista ja tieto-objekteista ilmenee henkilötunnukset niiden ammattilaisten osalta jotka osallistuu hoitoon. Dokumenttejä linkitetään Asiointi- ja Toimenpide-tieto-objekteihin niin että pääsynhallinta voi olla laajempaa kuin dokumenttikohtaista.
+Luvitus dataan perustuu hoitosuhteeseen. Hoitosuhde syntyy, kun ammattilainen osallistuu asiakkaan suunnitelmaan päävastuullisena tai osana hoitotiimiä. Asiakas luvittaa Kantasta ja Omatietovarannosta haetut terveystietonsa hoitoon osallistuville ammattilaisille.
 
 ## Kontekstinhallinta
 Testataan minimikontekstinhallinta potilastietojärjestelmittäin kun tullaan minimikontekstin kautta.
