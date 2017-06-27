@@ -68,6 +68,9 @@ Data model is described in [ODA RFC repository](https://github.com/omahoito/rfc/
 
 ODA uses standardized codesets whenever possible. See full [codes and code systems listing](codesets.md).
 
+### Roles and authorizations
+Documented (in Finnish): [Roolit ja valtuutukset](roolit-ja-valtuutukset.md)
+
 ### Integrations
 See [Integrations](integrations.md) for details.
 
