@@ -10,28 +10,34 @@ Pre-Condition 1: User is logged in via professional URL
 end note
 
 Professional -> ODA_WEB_UI: Open service request lists -view
-ODA_WEB_UI -> ODA_FHIR_API: GET [oda-fhir-base]/CareTeam/$searchservicerequests?Practitioner={id}
+ODA_WEB_UI -> ODA_FHIR_API: GET [oda-fhir-base]/CarePlan/$searchservicerequests?Practitioner={id}
 note left of ODA_FHIR_API #aqua
-Search all CareTeams professional belongs to
+Search CarePlan resources that the professional is authorized to access (include linked CareTeam and EpisodeOfCare resources)
 end note
-ODA_FHIR_API -> ODA_PHR: GET [oda-phr-base]/CareTeam?Practitioner={id}
-ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with CareTeam resources]
-note left of ODA_FHIR_API #aqua
-Search all CarePlans professional is authorized to access
-end note
-ODA_FHIR_API -> ODA_PHR: GET [oda-phr-base]/CarePlan?CareTeam={id}
-ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with CarePlan resources]
-note left of ODA_FHIR_API #aqua
-Search all Episodes of Care professional is participating to
-end note
-ODA_FHIR_API -> ODA_PHR: GET [oda-phr-base]/EpisodeOfCare/$searchbycareplan?CarePlan={id}
-ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with EpisodeOfCare resources]
-note left of ODA_FHIR_API #aqua
-Search patients' personal info for UI
-end note
-ODA_FHIR_API -> ODA_PHR: GET [oda-phr-base]/Patient/$getpersonaldata?Patient={id}
-ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with Patient and Person resources]
-ODA_FHIR_API -> ODA_FHIR_API: Add caremanager and patient info to CarePlan resource
+ODA_FHIR_API -> ODA_PHR: GET [oda-fhir-base]/CarePlan?care-team.participant={id}&_include=CarePlan.care-team&_include=CarePlan.context 
+
+ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with CarePlan, CareTeam and EpisodeOfCare resources]
+
+loop for every CarePlan in the Bundle
+    note left of ODA_FHIR_API #aqua
+        Search personal info of patient for UI
+    end note
+    ODA_FHIR_API -> ODA_PHR: GET [oda-phr-base]/Person/patient={id}&_include=Person.patient
+    ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [Bundle with Patient and Person resources]
+    ODA_FHIR_API -> ODA_FHIR_API: Add Patient info (name, national id) and careManager info (name) to CarePlan resource
+    
+    ODA_FHIR_API -> ODA_FHIR_API: Add CarePlan resource to result Bundle
+    note left of ODA_FHIR_API #aqua
+        Search CareTeam (of participating professionals) linked to EpisodeOfCare
+    end note
+    
+    ODA_FHIR_API -> ODA_PHR: GET [oda-phr-base]/CareTeam/{teamid}
+    ODA_PHR --> ODA_FHIR_API: HTTP 200 OK [CareTeam resource]
+    ODA_FHIR_API -> ODA_FHIR_API: Add CareTeam resource to result Bundle
+end
+
+
+
 ODA_FHIR_API --> ODA_WEB_UI: HTTP 200 OK [Bundle with CareTeam and CarePlan resources]
 ODA_WEB_UI --> Professional: Service request lists authorized to user
 Professional -> ODA_WEB_UI: Select task/careplan and take responsibility
