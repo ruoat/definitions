@@ -10,7 +10,7 @@ Pre-Condition 1: User is logged in via professional URL
 end note
 
 Professional -> ODA_WEB_UI: Open service request lists -view
-ODA_WEB_UI -> ODA_FHIR_API: GET [oda-fhir-base]/CarePlan/$searchservicerequests?Practitioner={id}
+ODA_WEB_UI -> ODA_FHIR_API: GET [oda-fhir-base]/CarePlan/$search-servicerequests?Practitioner={id}
 note left of ODA_FHIR_API #aqua
 Search CarePlan resources that the professional is authorized to access (include linked CareTeam and EpisodeOfCare resources)
 end note
