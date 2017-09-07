@@ -1,4 +1,5 @@
 @startuml
+!includeurl https://raw.githubusercontent.com/omahoito/rfc/master/Styles.iuml
 header
 Module diagram generated with plantuml.com to github.com/omahoito/definitions. \
 CC-BY-4.0 City of Espoo 2017. \
