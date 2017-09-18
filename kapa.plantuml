@@ -10,6 +10,8 @@ actor Browser
 
 folder "External Services" {
     component KaPa
+    component EHR
+    component ESB
 }
 
 folder ODA {
@@ -27,7 +29,9 @@ Browser --> gw
 gw --> x
 
 x --> esb
+x --> EHR
 esb <--> sec
+esb <--> ESB
 sec <--> KaPa
 esb --> gw
 
