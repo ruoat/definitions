@@ -21,7 +21,7 @@
 KaPa services are provided and consumed via 
 [oda-esb](https://github.com/omahoito/oda-esb) and an X-Road Security Server.
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/kapa.plantuml?2) 
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/kapa.plantuml?3) 
 <!-- To invalidate caches change the counter in the url above, i.e. kapa.plantuml?13 -> kapa.plantuml?14 -->
 
 The proposed services that could be published to KaPa are:
