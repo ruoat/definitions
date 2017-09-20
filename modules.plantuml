@@ -40,15 +40,17 @@ folder "ODA 2" {
     ocds --> op
     ons --> op
     dashboard --> oas
+    idp --> op
 }
 
 folder "External systems" as ext {
-    component "Suomi.fi" as suomifi
+    component "Suomi.fi\ne-Identification" as eident
+    component "Suomi.fi\nData Exchange Layer" as del
     component AVPH
 }
 
-idp --> suomifi
-esb <--> suomifi
+idp --> eident
+esb <--> del
 ofs --> AVPH
 
 folder "ODA 1" {
