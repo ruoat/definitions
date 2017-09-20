@@ -9,22 +9,37 @@ endheader
 agent browser
 folder "ODA 2" {
     component "oda-web-front" as owf
+    component dashboard
     component "oda-backend" as ob
+    component "oda-idp" as idp
+    component "oda-esb" as esb
     component "oda-fhir-service" as ofs
     component "oda-logging-service" as ols
     component "oda-phr" as op
+    component "oda-analytics-service" as oas
+    component "oda-notification-service" as ons
+    component "oda-cds-service" as ocds
     database "PostgreSQL" as postgres
     database "MongoDB" as mongo
 
     browser --> owf
+    browser --> dashboard
     owf --> ob
+    owf --> idp
     ob --> ofs
     ob --> ols
     ofs --> op
     ofs --> ols
+    ofs <--> esb
+    ofs --> ocds
+    ofs --> ons
     op --> ols
     op --> postgres
     ols --> mongo
+    oas --> ols
+    ocds --> op
+    ons --> op
+    dashboard --> oas
 }
 
 folder "External systems" as ext {
@@ -32,7 +47,8 @@ folder "External systems" as ext {
     component AVPH
 }
 
-ob --> suomifi
+idp --> suomifi
+esb <--> suomifi
 ofs --> AVPH
 
 folder "ODA 1" {
