@@ -40,8 +40,16 @@ context server.
 ### Connections from ODA to Internet
 
 ODA will connect to national services over X-Road and the public Internet. 
-ODA will also require access to an NTP server and operating system  update site. 
-Details are to be discussed if these connections are restricted.
+Operating system packages are installed and upgraded from official RedHat and 
+Fedora update sites, as well as middleware provider sites (such as Nginx).  
+Docker images are downloaded from Docker Hub. All these connections use HTTPS 
+or HTTP protocol.
+
+ODA will also require access to [MIKES] NTP servers. 
+
+Notably, ODA will not connect to SMTP servers.
+
+Details are to be discussed if outgoing connections are restricted. 
 
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.plantuml?1)
 
@@ -135,3 +143,6 @@ Details are to be discussed if these connections are restricted.
 | Logical connections        | Optional connections           | Physical connections  |
 | ------------- |:-------------:| -----:|
 | ![](logical.png)      | ![](optional.png) | ![](physical.png) |
+
+
+[MIKES]: http://www.mikes.fi/julkinen-ntp-palvelu
