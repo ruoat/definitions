@@ -37,6 +37,7 @@ folder ODA {
         component "oda-esb" as esb
         component "API Gateway" as gw
         component "oda-idp" as idp
+        component "Jitsi Videobridge" as jitsi
 
     }
     folder "ODA application VLAN" {
@@ -51,7 +52,9 @@ folder ODA {
 }
 
 public --> gw
+public --> jitsi
 LAN --> gw
+LAN --> jitsi
 
 sec <--> esb
 esb --> appointments
