@@ -26,7 +26,7 @@ Further reading (in Finnish): [Arkkitehtuuriperiaatteet](arkkitehtuuriperiaattee
 Currently implemented modules are listed below. See their repositories for more
 detailed software achitecture description.
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/modules.plantuml?3) 
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/modules.plantuml?4) 
 <!-- To invalidate caches change the counter in the url above, i.e. modules.plantuml?13 -> modules.plantuml?14 -->
 
 #### [oda-backend](https://github.com/omahoito/oda-backend) 
@@ -60,6 +60,19 @@ Shared server side Java library.
  
 #### [oda-web-front](https://github.com/omahoito/oda-web-front) 
 Web Browser UI that is served from oda-backend. 
+
+#### [oda-notification-service](https://github.com/omahoito/oda-notification-service)
+Oda-notification-service sends notifications to end users.
+
+#### [oda-cds-service](https://github.com/omahoito/oda-cds-service)
+Oda-cds-service acts as a decision making service for oda-fhir-service
+regarding specific questionnaires stored in oda-phr.
+
+#### [oda-analytics-service](https://github.com/omahoito/oda-analytics-service)
+Oda-analytics-service generates dashboard reports from ODA log data.
+
+#### [oda-idp](https://github.com/omahoito/oda-idp)
+ODA OpenID Connect Provider for authenticating and authorizing end users.
 
 ### Information architecture
 
