@@ -39,6 +39,9 @@ ODA source code is developed on various platforms and editors. Therefore common 
 ## JUnit
 - Use assertThat and hamcrest matchers instead of assertEquals
 - Use `@Test(expected = SomeException.class)` instead of try-catch
+- arrange test code to follow http://wiki.c2.com/?ArrangeActAssert pattern
+  + NOTE: always add empty line before and after Act-section even if test does not contain Arrange or Assert section(s) (e.g. if test is expected to throw it does not need Assertions) to make clear separation with Act-section and missing sections.
+  + this may not be feasible in more complex integration tests where empty lines may be needed inside sections to make tests more readable.
 
 ## Application Interfaces
 - In API:s, we use PascalCase.
