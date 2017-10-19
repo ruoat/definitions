@@ -1,4 +1,3 @@
-
 @startuml
 !includeurl https://raw.githubusercontent.com/omahoito/rfc/master/Styles.iuml
 header
@@ -16,13 +15,16 @@ folder Kela {
 
     artifact eResepti
     artifact eArkisto
+    artifact Kvarkki
 
     eResepti --* Kanta
     eArkisto --* Kanta
+    Kvarkki --* Kanta
 }
 
 folder ODA {
     database "oda-phr" as odaphr
+    database Mediavarasto
     agent SSO
 
     odaphr -- SSO
@@ -44,9 +46,10 @@ agent "Suomi.fi tunnistus" as suomifi
 suomifi -- VTJ
 
 agent EHR
+agent Laboratorio
 
 EHR -> Kanta
-
+Laboratorio -> Kanta
 
 
 agent Ajanvaraus
@@ -62,11 +65,11 @@ odaphr -- Ajanvaraus
 odaphr -- EHR : Ajanvaraus
 odaphr -- PHR
 odaphr -- Kanta
+odaphr -- Laboratorio
+odaphr -- Mediavarasto
 
 agent Mittalaitteet
 
-Mittalaitteet -- odaphr
+Mittalaitteet -- PHR
 Ajanvaraus -- EHR
-
-
 @enduml
