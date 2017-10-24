@@ -15,7 +15,7 @@ TCP connections:
 | Source | Destination                                         | Ports        |
 | ------ | --------------------------------------------------- | ------------ |
 | any    | DMZ/API Gateway (beta environment: 185.166.28.69)        | 80, 443 |
-| any    | DMZ/Jitsi Videobridge          | TCP 443 and 4443, UDP 10000-20000 |
+| any    | Control/Jitsi Videobridge      | TCP 443 and 4443, UDP 10000-20000 |
 | any    | DMZ/X-Road Security Server (beta environment: 185.166.28.70) | 443 |
 | DMZ    | Application VLAN/Microservices                   | 6080-6100 (TBD) |
 | DMZ    | Logging VLAN/Logging Service (Virtual IP)                   | 6084 |
@@ -53,7 +53,7 @@ Notably, ODA will not connect to SMTP servers.
 
 Details are to be discussed if outgoing connections are restricted. 
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.plantuml?2)
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.plantuml?3)
 
 ## Servers
 
