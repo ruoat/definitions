@@ -52,14 +52,16 @@ folder ODA {
         component "ControlHub microservices" as control
         jitsi --> control
         database MongoDB
-        control --> MongoDB
+        control -left-> MongoDB
     }
     folder "ODA logging VLAN" {
-        component "ODA Logging Service" as logging
+        component "ODA Logging and Analytic Services" as logging
         database Log
         logging --> Log
     }
 }
+
+control --> logging
 
 folder Kela {
     component Kanta
