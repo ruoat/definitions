@@ -1,4 +1,6 @@
 @startuml
+' Uncomment to use dark theme:
+' !includeurl https://raw.githubusercontent.com/omahoito/rfc/master/Styles.iuml
 
 header
 Deployment architecture diagram generated with plantuml.com to github.com/omahoito/definitions. \
