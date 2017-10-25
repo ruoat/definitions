@@ -1,4 +1,6 @@
 @startuml
+' Uncomment to use dark theme:
+' !includeurl https://raw.githubusercontent.com/omahoito/rfc/master/Styles.iuml
 
 header
 Deployment architecture diagram generated with plantuml.com to github.com/omahoito/definitions. \
@@ -17,7 +19,7 @@ agent "KaPa Services" as ks
 agent "3rd Party Applications" as apps
 
 cloud Internet as public
-cloud LAN
+cloud "Internet (or VPN-tunnel)" as LAN
 cloud Internet as kapa
 
 Customer --> public
@@ -25,7 +27,7 @@ Practitioner --> LAN
 ks <--> kapa
 apps ..> public
 
-folder "Local services" {
+folder "Municipalities' services" {
     component "Appointment Service" as appointments
     component "Minimum Context Server" as mctx
     component EHR
@@ -35,21 +37,38 @@ folder ODA {
     folder "ODA DMZ" {
         component "X-Road Security Server" as sec
         component "oda-esb" as esb
-        component "API Gateway" as gw
-        component "oda-idp" as idp
-        component "Jitsi Videobridge" as jitsi
+        component "Reverse Proxy" as gw
 
     }
     folder "ODA application VLAN" {
-        component "ODA microservices" as x
+        component "ODA microservices" as services
+        database Database as DB
+        database "Media storage" as mediastore
+        services --> DB
+        services --> mediastore
     }
-
+    folder "ODA Control VLAN" {
+        component "Jitsi Videobridge" as jitsi
+        component "ControlHub microservices" as control
+        jitsi --> control
+        database MongoDB
+        control -left-> MongoDB
+    }
     folder "ODA logging VLAN" {
-        component "ODA Logging Service" as logging
+        component "ODA Logging and Analytic Services" as logging
         database Log
         logging --> Log
     }
 }
+
+control --> logging
+
+folder Kela {
+    component Kanta
+    component OmaKanta
+}
+
+cloud "VPN-tunnel or Internet" as L2L
 
 public --> gw
 public --> jitsi
@@ -57,17 +76,18 @@ LAN --> gw
 LAN --> jitsi
 
 sec <--> esb
-esb --> appointments
-esb ..> EHR
+esb --> L2L
 esb --> logging
+esb --> Kela
 
-gw --> idp
-idp ..> mctx
+L2L --> appointments
+L2L ..> mctx
+L2L ..> EHR
 
 kapa <--> sec
 
-gw --> x
-x --> esb
-x --> logging
+gw --> services
+services --> esb
+services --> logging
 
 @enduml
