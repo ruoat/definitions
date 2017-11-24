@@ -13,3 +13,5 @@ Vaatimusmäärittelydokumenteissa on kuvattu tehtävän tavoitetila. Uudella toi
 **4. Tehtävän määrittely noudattaa hyviä käytäntöjä.** Tehtävä on laadittu teknisten rajausten, on hankkeen teknisten reunaehtojen sekä valittujen käytäntöjen mukaan tehty kuten Lean, Scrum, ja ODA koodikonventiot: https://github.com/omahoito/definitions/blob/master/codeconventions.md
 
 **5. Tehtävän tavoitteet on kuvattu. ** Pilotin Yksi mittari ja sen testitapaukset sekä pilotointitapa on tiedossa.
+
+**5. Tehtävä on viety jaeltavaksi, tehtävästä on automaattitestit ja logitus määritelty ja niiden toteutus resursoitu.
