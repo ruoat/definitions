@@ -50,6 +50,10 @@ ODA source code is developed on various platforms and editors. Therefore common 
   micro services shall register themselves to an 
   [Eureka](https://github.com/Netflix/eureka) server.
 
+## Remote APIs
+- Prefer RESTful JSON APIs
+- Use open standards, such as https://www.hl7.org/fhir/http.html
+
 ## Spring Framework
 - Use constructor injection instead of setter injection.
 
