@@ -2,6 +2,10 @@
 
 This repository contains ODA architecture and UI definitions.
 
+## Design principles 
+
+See [suunnitteluperiaatteet.md](suunnitteluperiaatteet.md) (in Finnish)
+
 ## Architecture
 
 The architecture is guided by the following principles:
