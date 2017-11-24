@@ -72,6 +72,9 @@ seuraukset ja seuraamukset. Käyttäjälle näytetään riittävästi
 tilatietoa istunnostaan, ja toiminnallisuuden nimet selkeästi ilmaisevat, 
 mitä hyötyä toiminnallisuudet tuottaa.
 
+Palvelun voimaannuttamisen mittari on palveluun palaavien käyttäjien määrä.
+
+
 ## Tasavertaisuus ja inklusiivisuus
 
 Tunnistamme kaikkien ihmisten luontaiset oikeudet ihmisinä luomalla ja 
@@ -119,3 +122,5 @@ Varmistamme sekä käytettävyyskatselmoinnein että palvelun käyttöä
 mittaamalla että julkaistu käyttökokemus on wow-tasoinen. Seuraamme palvelun 
 käyttöä ja automaattitestaamme tunnetut käyttötapaukset niin että 
 käyttökokemus on toimintavarma.
+
+Käyttökokemuksen laadun mittari on käyttäjätarinoiden läpimenoaika.
