@@ -16,4 +16,4 @@ Vaatimusmäärittelydokumenteissa on kuvattu tehtävän tavoitetila. Uudella toi
 
 **6. Pilotin Yksi mittari ja sen testitapaukset sekä pilotointitapa on tiedossa.
 
-**5. Tehtävä on viety jaeltavaksi, tehtävästä on automaattitestit ja logitus määritelty ja niiden toteutus resursoitu.
+**7. Tehtävä on viety jaeltavaksi, tehtävästä on automaattitestit ja logitus määritelty ja niiden toteutus resursoitu.
