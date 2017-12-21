@@ -68,7 +68,7 @@ folder Kela {
     component OmaKanta
 }
 
-cloud "VPN-tunnel or Internet" as L2L
+cloud "KY network or VPN tunnel" as L2L
 
 public --> gw
 public --> jitsi
@@ -81,7 +81,7 @@ esb --> logging
 esb --> Kela
 
 L2L --> appointments
-L2L ..> mctx
+L2L --> mctx
 L2L ..> EHR
 
 kapa <--> sec
