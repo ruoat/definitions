@@ -53,7 +53,7 @@ Notably, ODA will not connect to SMTP servers.
 
 Details are to be discussed if outgoing connections are restricted. 
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.plantuml?3)
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/omahoito/definitions/master/deployment.plantuml?4)
 
 ## Servers
 
