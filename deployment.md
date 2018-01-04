@@ -31,7 +31,11 @@ ports 443 and 80 (which redirects to 443) must be opened, as well as UPD ports
 
 ### Connections from ODA to local services
 
-Source IP for beta environment is 185.166.28.68.
+Source IP for pilot environment is 185.166.28.68.
+
+Source IP for alpha environment is 185.166.28.133.
+
+Source IP for production environment is to be decided.
 
 ODA ESB will connect to local appointment booking service. Connections to other
 EHR APIs might be required in the future. 
