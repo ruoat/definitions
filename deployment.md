@@ -12,14 +12,14 @@ ODA deployment will consist of three networks:
 Each network will be protected by a firewall. Firewall rules for incoming 
 TCP connections:
 
-| Source | Destination                                         | Ports        |
-| ------ | --------------------------------------------------- | ------------ |
-| any    | DMZ/API Gateway (beta environment: 185.166.28.69)        | 80, 443 |
-| any    | Control/Jitsi Videobridge      | TCP 443 and 4443, UDP 10000-20000 |
-| any    | DMZ/X-Road Security Server (beta environment: 185.166.28.70) | 443 |
-| DMZ    | Application VLAN/Microservices                   | 6080-6100 (TBD) |
-| DMZ    | Logging VLAN/Logging Service (Virtual IP)                   | 6084 |
-| Application VLAN | Logging VLAN/Logging Service (Virtual IP)         | 6084 |
+| Source | Destination                                          | Ports        |
+| ------ | ---------------------------------------------------- | ------------ |
+| any    | DMZ/API Gateway (pilot environment: 185.166.28.69)        | 80, 443 |
+| any    | Control/Jitsi Videobridge   | TCP 80, 443 and 4443, UDP 10000-20000 |
+| any    | DMZ/X-Road Security Server (pilot environment: 185.166.28.70) | 443 |
+| DMZ    | Application VLAN/Microservices                    | 6080-6100 (TBD) |
+| DMZ    | Logging VLAN/Logging Service (Virtual IP)                    | 6084 |
+| Application VLAN | Logging VLAN/Logging Service (Virtual IP)          | 6084 |
 
 Port 22 (SSH) will be opened to every server to provide remote management 
 access. Additionally, a monitoring server and/or agents will be included in the
