@@ -46,7 +46,7 @@ ODA source code is developed on various platforms and editors. Therefore common 
 - integration tests should be named with \*IT-suffix (e.g. SomeOtherClassIT.java)
 - integration tests should use IntegrationTestRule (defined in oda-service-common) to cause the test to be run only if *runIntegrationTest* environment variable is set to true. E.g.
 ```
-public class SomeTest {
+public class SomeIT {
 
     @Rule
     public IntegrationTestRule integrationTestRule = new IntegrationTestRule();
